@@ -1,0 +1,551 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ======================
+% Packages
+% ======================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{array}
+
+% ======================
+% Colors
+% ======================
+\definecolor{mblack}{RGB}{20, 20, 20}
+%\definecolor{mblue}{RGB}{113, 162, 182}
+%\definecolor{morange}{RGB}{152, 38, 73}
+\definecolor{mblue}{RGB}{152, 38, 73}
+\definecolor{morange}{RGB}{113, 162, 182}
+\definecolor{mwhite}{RGB}{255, 255, 255}
+\definecolor{mcc}{RGB}{30, 100, 180}
+\definecolor{mia}{RGB}{20, 140, 80}
+\definecolor{mcclight}{RGB}{220, 235, 255}
+\definecolor{mialight}{RGB}{210, 245, 225}
+% Categorias de disciplinas
+\definecolor{catmat}{RGB}{208, 228, 248}
+\definecolor{catprog}{RGB}{254, 236, 200}
+\definecolor{catia}{RGB}{200, 235, 210}
+\definecolor{catproj}{RGB}{235, 215, 245}
+\definecolor{catest}{RGB}{255, 245, 200}
+\definecolor{cathum}{RGB}{250, 215, 225}
+\definecolor{catsw}{RGB}{210, 235, 255}
+\definecolor{cattcc}{RGB}{230, 220, 250}
+\definecolor{catext}{RGB}{210, 245, 248}
+\definecolor{catopt}{RGB}{230, 232, 234}
+
+% ======================
+% Theme & Style
+% ======================
+\usetheme{default}
+\usecolortheme{default}
+\setbeamercolor{normal text}{fg=mblack, bg=white}
+\setbeamercolor{frametitle}{fg=white, bg=mblue}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{itemize item}{fg=morange}
+\setbeamercolor{itemize subitem}{fg=mblue}
+\setbeamercolor{enumerate item}{fg=morange}
+\setbeamercolor{enumerate subitem}{fg=mblue}
+\setbeamercolor{block title}{fg=white, bg=mblue}
+\setbeamercolor{block body}{fg=mblack, bg=mblue!8}
+\setbeamercolor{alerted text}{fg=morange}
+
+\setbeamerfont{frametitle}{series=\bfseries, size=\large}
+\setbeamerfont{title}{series=\bfseries, size=\LARGE}
+\setbeamerfont{block title}{series=\bfseries}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Footer
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.7\paperwidth, ht=2.25ex, dp=1ex, leftskip=0.3cm]{normal text}%
+      \tiny\color{mblack!50} DECOM -- Apresentação dos Cursos de CC e IA
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.3\paperwidth, ht=2.25ex, dp=1ex, rightskip=0.3cm, right]{normal text}%
+      \tiny\color{mblack!50}\insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+% Frametitle com barra laranja
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0.2cm, leftskip=0.5cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+  \vspace{-0.1cm}%
+  \textcolor{morange}{\rule{\paperwidth}{2pt}}%
+}
+
+% Title page
+\setbeamercolor{titlebar top}{bg=mwhite}
+\setbeamercolor{titlebar main}{bg=mblue}
+\setbeamercolor{titlebar bottom}{bg=morange}
+
+\setbeamertemplate{title page}{%
+  \vspace{0pt}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0pt]{titlebar top}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=3.8cm, dp=0pt, center]{titlebar main}%
+    \vspace{0.6cm}
+    {\usebeamerfont{title}\color{white}\inserttitle\par}%
+    \vspace{0.35cm}
+    {\color{white}\small\insertauthor\par}%
+    \vspace{0.15cm}
+    {\color{white}\footnotesize\insertdate\par}%
+    \vspace{0.25cm}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=1.3cm, dp=0pt]{titlebar bottom}%
+  \end{beamercolorbox}%
+}
+
+\setlength{\itemsep}{4pt}
+
+\newcommand{\impt}[1]{\textcolor{morange}{\textbf{#1}}}
+\newcommand{\ntc}[1]{\textcolor{mblue}{#1}}
+\newcommand{\cc}[1]{\textcolor{mcc}{\textbf{#1}}}
+\newcommand{\ia}[1]{\textcolor{mia}{\textbf{#1}}}
+
+% Macro para célula da grade
+% Uso: \D{cor}{texto}
+\newcommand{\D}[2]{%
+  \cellcolor{#1}\fontsize{6.5pt}{7.5pt}\selectfont\bfseries #2}
+
+% ======================
+% Document Info
+% ======================
+\title{Aula 1 --- Apresentação dos Cursos}
+\author{Departamento de Computação (DECOM) -- UFOP}
+\date{\today}
+
+% ======================
+% Document
+% ======================
+\begin{document}
+
+% --- Capa ---
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% --- Sumário ---
+\begin{frame}{Sumário}
+  \tableofcontents
+\end{frame}
+
+% ==============================================================
+\section{Contexto Institucional}
+% ==============================================================
+
+\begin{frame}{UFOP e o DECOM}
+  \begin{itemize}
+    \item Ambos os cursos são oferecidos pela \textbf{Universidade Federal de Ouro Preto (UFOP)}, campus Morro do Cruzeiro, Ouro Preto -- MG.
+    \item Vinculados ao \textbf{Instituto de Ciências Exatas e Biológicas (ICEB)}, que reúne departamentos das áreas de Exatas, Biológicas e Computação.
+    \item O \impt{Departamento de Computação (DECOM)} é o departamento central de ambos os cursos:
+    \begin{itemize}
+      \item Mais de 30 professores doutores em dedicação exclusiva
+      \item Áreas: algoritmos, IA, engenharia de software, redes, otimização, computação gráfica...
+    \end{itemize}
+  \end{itemize}
+  \begin{block}{Canal oficial do aluno}
+    O \textbf{Colegiado do Curso} é responsável pela parte educacional e pedagógica dos cursos.
+    \centering
+    cocic@ufop.edu.br, cobia@ufop.edu.br
+  \end{block}
+\end{frame}
+
+% ==============================================================
+\section{Os Dois Cursos em Perspectiva Comparada}
+% ==============================================================
+\centering
+\begin{frame}{Os Dois Cursos: Números}
+  \vspace{0.2cm}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{Característica} & \cc{CC} & \ia{IA} \\
+    \midrule
+    Início              & 1986          & 2025 \\
+    Vagas / semestre    & 40            & 40 \\
+    Integralização mín. & 8 semestres   & 8 semestres \\
+    Integralização máx. & 12 semestres  & 12 semestres \\
+    Carga total         & 3.300 h       & 2.820 h \\
+    Obrigatórias        & 2.670 h       & 2.100 h \\
+    Eletivas (mín.)     & 360 h         & 480 h \\
+    Extensionistas      & 330 h         & 360 h \\
+    AACC                & 240 h         & 240 h \\
+    TCC                 & Monografia I+II & Memorial\\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.2cm}
+
+  \ntc{IA tem carga eletiva maior: formação especializada com maior flexibilidade de aprofundamento.}
+\end{frame}
+
+% ==============================================================
+\section{Bacharelado em Ciência da Computação}
+% ==============================================================
+
+\begin{frame}{CC: Missão e Eixos de Formação}
+  \begin{block}{Missão}
+    Formar profissionais \impt{aptos a especificar, projetar, implementar e avaliar sistemas computacionais}, de forma inovadora e empreendedora, atendendo às necessidades da sociedade e do mercado.
+  \end{block}
+  \vspace{0.2cm}
+  \textbf{7 Eixos de Formação (SBC):}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{enumerate}\setlength\itemsep{2pt}
+        \item Resolução de Problemas
+        \item Desenvolvimento de Sistemas
+        \item Desenvolvimento de Projetos
+        \item Implantação de Sistemas
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{enumerate}\setlength\itemsep{2pt}
+        \setcounter{enumi}{4}
+        \item Gestão de Infraestrutura
+        \item Aprendizado Contínuo e Autônomo
+        \item Ciência, Tecnologia e Inovação
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{CC: Perfil do Egresso}
+  Segundo as Diretrizes Curriculares Nacionais (DCNs), espera-se que o egresso de CC:
+  \begin{itemize}
+    \item Possua \textbf{sólida formação} em CC e Matemática, capaz de construir aplicativos, ferramentas e infraestrutura de software
+    \item Tenha \textbf{visão global e interdisciplinar} de sistemas, transcendendo detalhes de implementação
+    \item Conheça a estrutura dos sistemas de computação e os processos de construção e análise
+    \item Seja capaz de agir \textbf{reflexivamente}: sistemas atingem direta ou indiretamente a sociedade
+    \item Reconheça a importância da \textbf{inovação e criatividade} e as perspectivas de negócio
+  \end{itemize}
+\end{frame}
+
+%%--------------------------------------------
+
+\begin{frame}{CC: Grade Curricular}
+  \vspace{0.1cm}
+  \centering
+  \setlength{\tabcolsep}{2pt}
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\arrayrulewidth}{0.9pt}
+  \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+  \hline
+  \cellcolor{mcc}\color{white}\bfseries\tiny 1º Período &
+  \cellcolor{mcc}\color{white}\bfseries\tiny 2º Período &
+  \cellcolor{mcc}\color{white}\bfseries\tiny 3º Período &
+  \cellcolor{mcc}\color{white}\bfseries\tiny 4º Período &
+  \cellcolor{mcc}\color{white}\bfseries\tiny 5º Período &
+  \cellcolor{mcc}\color{white}\bfseries\tiny 6º Período &
+  \cellcolor{mcc}\color{white}\bfseries\tiny 7º Período &
+  \cellcolor{mcc}\color{white}\bfseries\tiny 8º Período \\
+  \hline
+  \D{catprog}{Intro. Programação} &
+  \D{catprog}{Mat. Discreta I} &
+  \D{catprog}{Mat. Discreta II} &
+  \D{catprog}{Teoria dos Grafos} &
+  \D{catprog}{P\&A Algoritmos} &
+  \D{catia}{Proc. Digital Imagens} &
+  \D{cattcc}{Monografia I} &
+  \D{cattcc}{Monografia II} \\
+  \hline
+  \D{catprog}{Eletrônica p/ Comp.} &
+  \D{catprog}{Estrut. de Dados I} &
+  \D{catprog}{Estrut. de Dados II} &
+  \D{catprog}{Sist. Operacionais} &
+  \D{catprog}{Teoria Computação} &
+  \D{catprog}{Sist. Distribuídos} &
+  \D{catext}{Eventos para CC (120h)} &
+  \D{cathum}{Hist. da Filosofia} \\
+  \hline
+  \D{catprog}{Intro. à CC} &
+  \D{catprog}{Org. Computadores} &
+  \D{catprog}{POO} &
+  \D{catprog}{Eng. de Software I} &
+  \D{catprog}{Redes Computadores} &
+  \D{catia}{Intelig. Artificial} &
+  \D{catext}{Informática e Soc.(90h)} &
+  \D{cathum}{Direito Informática} \\
+  \hline
+  \D{catmat}{Cálculo I} &
+  \D{cathum}{IHC} &
+  \D{catprog}{Prog. Funcional} &
+  \D{catprog}{Cálculo Numérico} &
+  \D{catia}{Intro. Aprend. Máquina} &
+  \D{cathum}{Metod. Científica} &
+  \D{catprog}{Computação Gráfica} &
+   \\
+  \hline
+  \D{catmat}{Geom. Analítica} &
+  \D{cathum}{Prát. Leitura/Texto} &
+  \D{catprog}{Arq. Computadores} &
+  \D{catprog}{Banco de Dados I} &
+  \D{catprog}{Eng. de Software II} &
+  \D{catprog}{Const. Compiladores I} &
+   & \\
+  \hline
+  &
+  \D{catmat}{Cálculo II} &
+  \D{catmat}{Álgebra Linear} &
+  \D{catmat}{Estat. e Prob.} &
+  \D{catprog}{Intro. Otimização} &
+  & & \\
+  \hline
+  \end{tabular}
+
+  \vspace{0.15cm}
+  {\tiny
+  \colorbox{catmat}{\phantom{x}}~Mat./Est.\quad
+  \colorbox{catprog}{\phantom{x}}~CC\quad
+  \colorbox{catia}{\phantom{x}}~IA/ML\quad
+  \colorbox{cathum}{\phantom{x}}~Humanidades\quad
+  \colorbox{cattcc}{\phantom{x}}~TCC\quad
+  \colorbox{catext}{\phantom{x}}~Extensão\quad
+  }
+\end{frame}
+
+% ==============================================================
+\section{Bacharelado em Inteligência Artificial}
+% ==============================================================
+
+\begin{frame}{IA: Missão e Competências Específicas}
+  \begin{block}{Missão}
+    Capacitar egressos para \impt{conceber, desenvolver e aplicar sistemas inteligentes} --- alinhados ao Plano Brasileiro de IA (PBIA): \enquote{IA para o Bem de Todos}.
+  \end{block}
+  \vspace{0.15cm}
+  \textbf{5 Competências Específicas do Egresso (CE):}
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item \textbf{CE-I:} Fundamentos em CC, Matemática e Estatística
+    \item \textbf{CE-II:} Paradigmas de IA --- abordagens simbólicas e conexionistas
+    \item \textbf{CE-III:} Ciclo de vida dos dados: aquisição, mineração, visualização e ML
+    \item \textbf{CE-IV:} Soluções inovadoras com visão de negócio em IA
+    \item \textbf{CE-V:} Ética: privacidade, equidade, transparência e vieses algorítmicos
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{IA: Eixos de Formação}
+  \textbf{7 Eixos de Formação específicos para IA (SBC):}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{enumerate}\setlength\itemsep{3pt}
+        \item Fundamentos Matemáticos e Computacionais
+        \item Raciocínio e Representação de Conhecimento
+        \item Aprendizado de Máquina e Ciência de Dados
+        \item Percepção e Atuação (Visão, PLN, Robótica)
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{enumerate}\setlength\itemsep{3pt}
+        \setcounter{enumi}{4}
+        \item Engenharia de Sistemas Inteligentes
+        \item Ética, Sociedade e Governança da IA
+        \item Desenvolvimento Profissional e Aprendizado Contínuo
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+  \pause
+  \vspace{0.3cm}
+  \begin{alertblock}{Diferencial: Projetos 1 a 4}
+    Do 4º ao 7º período, o aluno desenvolve \textbf{4 disciplinas de Projeto} (cada uma com 90h, sendo 90h extensionistas) aplicando os conhecimentos adquiridos a problemas reais.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{IA: Grade Curricular}
+  \vspace{0.1cm}
+  \centering
+  \setlength{\tabcolsep}{2pt}
+  \renewcommand{\arraystretch}{1.1}
+  \setlength{\arrayrulewidth}{0.9pt}
+  \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+  \hline
+  \cellcolor{mia}\color{white}\bfseries\tiny 1º Período &
+  \cellcolor{mia}\color{white}\bfseries\tiny 2º Período &
+  \cellcolor{mia}\color{white}\bfseries\tiny 3º Período &
+  \cellcolor{mia}\color{white}\bfseries\tiny 4º Período &
+  \cellcolor{mia}\color{white}\bfseries\tiny 5º Período &
+  \cellcolor{mia}\color{white}\bfseries\tiny 6º Período &
+  \cellcolor{mia}\color{white}\bfseries\tiny 7º Período &
+  \cellcolor{mia}\color{white}\bfseries\tiny 8º Período \\
+  \hline
+  \D{catia}{Intro. à IA} &
+  \D{catia}{IA Clássica} &
+  \D{catia}{Intro. Ciência Dados} &
+  \D{catprog}{Eng. de Software I} &
+  \D{catprog}{Teoria dos Grafos} &
+  \D{catia}{Proc. Ling. Natural} &
+  \D{catmat}{Análise Séries Temp.} &
+  \D{cathum}{Seg., Ética e Soc. IA} \\
+  \hline
+  \D{catprog}{Intro. Programação} &
+  \D{catprog}{Estrut. de Dados I} &
+  \D{catia}{AM Supervisionado} &
+  \D{catia}{Redes Neurais / DL} &
+  \D{catia}{Aprend. por Reforço} &
+  \D{catia}{Visão Computacional} &
+  \D{catproj}{Projeto 4 } &
+  \D{cattcc}{Monografia (TCC)} \\
+  \hline
+  \D{catprog}{Mat. Discreta I} &
+  \D{catprog}{Fund. Arq. e Org.} &
+  \D{catia}{AM Não Supervis.} &
+  \D{catprog}{Intro. Otimização} &
+  \D{catprog}{Comp. Paralela/Dist.} &
+  \D{cathum}{Metod. Cient. IA} &
+   &
+   \\
+  \hline
+  \D{catmat}{Cálculo A} &
+  \D{catmat}{Estat. e Prob.} &
+  \D{catprog}{POO} &
+  \D{catprog}{Intelig. de Negócios} &
+  \D{catest}{Planej. Experimentos I} &
+  \D{catproj}{Projeto 3 } &
+   &
+   \\
+  \hline
+  \D{catmat}{Geom. Anal. e Álg. Lin.} &
+  \D{catmat}{Cálculo B} &
+  \D{catprog}{P\&A Algoritmos} &
+  \D{catproj}{Projeto 1}  &
+  \D{catproj}{Projeto 2}  &
+    &
+    &
+   \\
+  \hline
+  \end{tabular}
+
+  \vspace{0.15cm}
+  {\tiny
+  \colorbox{catmat}{\phantom{x}}~Mat./Est.\quad
+  \colorbox{catprog}{\phantom{x}}~CC\quad
+  \colorbox{catia}{\phantom{x}}~IA/ML\quad
+  \colorbox{catproj}{\phantom{x}}~Extensão\quad
+  \colorbox{cathum}{\phantom{x}}~Humanística\quad
+  \colorbox{cattcc}{\phantom{x}}~TCC\quad
+  }
+\end{frame}
+
+% ==============================================================
+\section{Departamentos Envolvidos}
+% ==============================================================
+
+\begin{frame}{Departamentos Envolvidos nos Cursos}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textcolor{mcc}{\textbf{Colegiado de CC (COCIC)}}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \textbf{DECOM} --- disciplinas obrigatórias e eletivas
+        \item \textbf{DEMAT} --- Cálculo I/II, Álgebra Linear, Geom. Anal.
+        \item \textbf{DEEST} --- Estatística e Probabilidade
+        \item \textbf{DEFIL} --- Intro. à História da Filosofia
+        \item \textbf{DEDIR} --- Direito da Informática
+        \item \textbf{CEAD} --- Prática de Leitura e Produção de Textos
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textcolor{mia}{\textbf{Colegiado de IA}}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \textbf{DECOM} --- disciplinas obrigatórias e eletivas
+        \item \textbf{DEMAT} --- Cálculo A/B, Geom. Anal. e Álg. Linear
+        \item \textbf{DEEST} --- Estat., Planej. Experimentos, Séries Temporais
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \pause
+  \vspace{0.3cm}
+  \footnotesize
+  \begin{alertblock}{Dica}
+    Para aproveitamento de disciplinas, reopção ou qualquer questão acadêmica, o canal correto é o \textbf{Colegiado do seu curso}. Todos os departamentos parceiros têm representação nesses colegiados.
+  \end{alertblock}
+\end{frame}
+
+% ==============================================================
+\section{Como os Cursos se Relacionam}
+% ==============================================================
+
+\begin{frame}{CC e IA: Semelhanças e Diferenças}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Em comum}
+        \begin{itemize}\setlength\itemsep{2pt}
+          \item Mesmo DECOM, docentes e laboratórios
+          \item Base matemática: cálculo, álgebra, mat.\ discreta
+          \item Disciplinas BCC compartilhadas: ED, POO, Grafos, Algoritmos, Redes Neurais...
+          \item Empresa Júnior \textbf{Voluta Soluções Digitais}
+          \item Acesso ao PPGCC (mestrado e doutorado)
+          \item Possibilidade de reopção entre cursos
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \cc{CC --- Formação generalista}
+      \begin{itemize}\setlength\itemsep{1pt}
+        \item Hardware, SO, compiladores, redes, IA, computação gráfica...
+        \item 3.300h totais
+      \end{itemize}
+      \vspace{0.3cm}
+      \ia{IA --- Formação especializada}
+      \begin{itemize}\setlength\itemsep{1pt}
+        \item Toda a grade converge para sistemas inteligentes
+        \item 4 disciplinas de Projeto com problemas reais
+        \item 480h de eletivas para aprofundamento
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ==============================================================
+\section{Vida Acadêmica}
+% ==============================================================
+
+\begin{frame}{Oportunidades Além da Sala de Aula}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Pesquisa e Extensão}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item \textbf{Iniciação Científica (IC)} --- bolsas CNPq, FAPEMIG, PIBIC/UFOP
+        \item \textbf{Atividades Extensionistas} --- obrigatórias (10\% da carga horária)
+        \item \textbf{AACCs} --- eventos, cursos, monitorias, publicações
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Empresa Júnior}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item \textbf{Voluta Soluções Digitais} --- fundada em 2016, aberta a alunos de CC
+        \item Projetos reais para micro e pequenas empresas
+        \item Desenvolve visão empreendedora e gestão
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Pós-Graduação}
+      \begin{itemize}
+        \item \textbf{PPGCC} --- mestrado e doutorado, aberto a alunos de ambos os cursos
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ==============================================================
+\section{Síntese}
+% ==============================================================
+
+\begin{frame}{O Que Você Precisa Saber ao Ingressar}
+  \begin{enumerate}\setlength\itemsep{5pt}
+    \item \impt{Curso sólido} --- IFES com tradição em pesquisa, extensão e ótimas avaliações no SINAES
+    \item \ntc{Múltiplos departamentos} --- professores do DECOM, DEMAT, DEEST e outros ao longo do curso
+    \item \textbf{Regime semestral} --- até 6 disciplinas por semestre a partir do 2º período; respeite os pré-requisitos
+    \item \textbf{Eletivas e flexibilidade} --- CC: 360h + 60h facultativas; IA: 480h eletivas
+    \item \textbf{Pesquisa e extensão} --- bolsas, Voluta, PPGCC à sua disposição
+    \item \textbf{Planeje o TCC cedo} --- CC: inicia no 7º período; IA: Projetos 1--4 constroem o TCC progressivamente
+  \end{enumerate}
+\end{frame}
+
+\end{document}
