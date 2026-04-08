@@ -1,0 +1,379 @@
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage{parskip}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+\usepackage{csquotes}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds}
+
+\definecolor{important}{RGB}{200, 60, 60}
+\definecolor{notice}{RGB}{0, 102, 204}
+\definecolor{cccolor}{RGB}{30, 100, 180}
+\definecolor{iacolor}{RGB}{20, 140, 80}
+\definecolor{shadeCC}{RGB}{220, 235, 255}
+\definecolor{shadeIA}{RGB}{210, 245, 225}
+\definecolor{shadegray}{RGB}{245, 245, 245}
+
+\newcommand{\impt}[1]{\textcolor{important}{\textbf{#1}}}
+\newcommand{\ntc}[1]{\textcolor{notice}{#1}}
+\newcommand{\cc}[1]{\textcolor{cccolor}{\textbf{#1}}}
+\newcommand{\ia}[1]{\textcolor{iacolor}{\textbf{#1}}}
+
+\setlist{nosep}
+\geometry{margin=2cm}
+
+\newtheorem{definition}{Definição}[section]
+\newtheorem{remark}{Observação}[section]
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=cccolor,
+  urlcolor=cccolor
+}
+
+\title{Aula 1 --- Apresentação dos Cursos de Ciência da Computação e Inteligência Artificial\footnote{Material elaborado com base nos Projetos Pedagógicos de Curso (PPCs) do Bacharelado em Ciência da Computação (2023) e do Bacharelado em Inteligência Artificial (2025) da UFOP.}}
+\author{Departamento de Computação (DECOM) -- UFOP}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\bigskip
+\noindent\colorbox{shadegray}{\parbox{\dimexpr\linewidth-2\fboxsep}{%
+\textbf{Objetivo da aula:} Apresentar a estrutura, a grade curricular e a organização acadêmica dos dois cursos oferecidos pelo DECOM -- o Bacharelado em \cc{Ciência da Computação (CC)} e o Bacharelado em \ia{Inteligência Artificial (IA)} -- destacando semelhanças, diferenças e as formas de interação entre eles.
+}}
+
+% ============================================================
+\section{Contexto Institucional: UFOP e o DECOM}
+% ============================================================
+
+Ambos os cursos são oferecidos pela \textbf{Universidade Federal de Ouro Preto (UFOP)}, instituição pública federal situada em Ouro Preto, Minas Gerais. A UFOP tem como missão a geração e difusão do conhecimento por meio do ensino, pesquisa e extensão, com compromisso com a ética, a responsabilidade social e o desenvolvimento regional e nacional.
+
+\paragraph{O Instituto de Ciências Exatas e Biológicas (ICEB).}
+Ambos os cursos estão vinculados ao ICEB, localizado no Campus Morro do Cruzeiro. O ICEB reúne departamentos das áreas de Ciências Exatas, Biológicas e da Computação, favorecendo um ambiente multidisciplinar.
+
+\paragraph{O Departamento de Computação (DECOM).}
+O \impt{DECOM} é o departamento proponente e anfitrião de ambos os cursos. Responsável pela maior parte das disciplinas obrigatórias de cada grade, o DECOM conta com um corpo docente composto por mais de 30 professores doutores em regime de dedicação exclusiva, abrangendo áreas como algoritmos, inteligência artificial, engenharia de software, sistemas distribuídos, computação gráfica, otimização, entre outras.
+
+\begin{remark}
+A estrutura organizacional da UFOP distribui o poder de decisão acadêmica entre os \textbf{Conselhos Departamentais}, os \textbf{Colegiados de Curso} e os \textbf{Departamentos}. Para o aluno, o principal canal de comunicação é o \textbf{Colegiado do Curso}, responsável por aprovações de matrícula, aproveitamento de disciplinas, planos de estudo e demais questões acadêmicas.
+\end{remark}
+
+% ============================================================
+\section{Os Dois Cursos em Perspectiva Comparada}
+% ============================================================
+
+O DECOM oferece hoje dois cursos de graduação:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{lXX}
+\toprule
+\textbf{Característica} & \cc{Ciência da Computação (CC)} & \ia{Inteligência Artificial (IA)} \\
+\midrule
+Início & 1986 & 2025 \\
+Vagas & 40 por semestre & 40 por semestre \\
+Turno & Integral & Integral \\
+Mínimo para integralizar & 8 semestres (4 anos) & 8 semestres (4 anos) \\
+Máximo para integralizar & 12 semestres (6 anos) & 12 semestres (6 anos) \\
+Carga horária total & 3.300 h & 2.820 h \\
+Obrigatórias & 2.670 h & 2.100 h \\
+Eletivas (mínimo) & 360 h & 480 h \\
+Atividades (AACC) & 240 h & 240 h \\
+Extensionistas & 330 h & 360 h \\
+Regime & Semestral & Semestral \\
+Titulação & Bacharel em CC & Bacharel em IA \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\ntc{Observe que o curso de IA possui uma carga eletiva proporcionalmente maior, o que reflete uma proposta de formação mais especializada porém com maior flexibilidade para aprofundamento em subáreas.}
+
+% ============================================================
+\section{Curso de Bacharelado em Ciência da Computação}
+% ============================================================
+
+\subsection{Missão e Concepção}
+
+O curso de \cc{Bacharelado em Ciência da Computação da UFOP} busca prioritariamente a formação do estudante no desenvolvimento de \textbf{competências profissionais e éticas}, a partir de uma multiplicidade de conteúdos que convergem em uma formação integral, crítica e autônoma. Sua estrutura curricular distribui os conteúdos em complexidade crescente, com disciplinas que cobrem desde os fundamentos teóricos da computação até as aplicações tecnológicas mais avançadas.
+
+O objetivo geral é assegurar a formação de profissionais com graduação plena, \impt{aptos a especificar, projetar, implementar e avaliar sistemas computacionais}, de forma inovadora e empreendedora, atendendo às necessidades da sociedade e do mercado.
+
+\subsection{Perfil do Egresso}
+
+Segundo as Diretrizes Curriculares Nacionais (DCNs) adotadas pelo curso, espera-se que o egresso de CC:
+
+\begin{itemize}
+  \item Possua sólida formação em Ciência da Computação e Matemática, com capacidade de construir aplicativos, ferramentas e infraestrutura de software;
+  \item Tenha visão global e interdisciplinar de sistemas, transcendendo detalhes de implementação;
+  \item Conheça a estrutura dos sistemas de computação e os processos envolvidos na sua construção e análise;
+  \item Seja capaz de agir de forma reflexiva na construção de sistemas que atingem direta ou indiretamente a sociedade;
+  \item Reconheça a importância da inovação e da criatividade, entendendo as perspectivas de negócios e oportunidades relevantes.
+\end{itemize}
+
+\subsection{Eixos de Formação (Referenciais SBC)}
+
+A grade curricular de CC foi organizada em torno de \textbf{sete eixos de formação} definidos pela Sociedade Brasileira de Computação (SBC):
+
+\begin{enumerate}
+  \item \textbf{Resolução de Problemas} --- identificar e modelar problemas computacionais, escolhendo estratégias e algoritmos adequados;
+  \item \textbf{Desenvolvimento de Sistemas} --- projetar e implementar sistemas de software e hardware de qualidade;
+  \item \textbf{Desenvolvimento de Projetos} --- gerenciar e conduzir projetos computacionais com metodologias adequadas;
+  \item \textbf{Implantação de Sistemas} --- implantar, configurar e manter sistemas computacionais em ambientes reais;
+  \item \textbf{Gestão de Infraestrutura} --- administrar a infraestrutura computacional de uma organização;
+  \item \textbf{Aprendizado Contínuo e Autônomo} --- capacidade de se reciclar e buscar novos conhecimentos ao longo da carreira;
+  \item \textbf{Ciência, Tecnologia e Inovação} --- produzir e aplicar conhecimento científico e tecnológico.
+\end{enumerate}
+
+\subsection{Organização Curricular de CC}
+
+A grade é composta por quatro grandes grupos de disciplinas:
+
+\begin{itemize}
+  \item \textbf{Formação básica / matemática}: Cálculo, Álgebra Linear, Geometria Analítica, Matemática Discreta, Estatística e Probabilidade;
+  \item \textbf{Formação tecnológica / profissional}: Estruturas de Dados, Algoritmos, Arquitetura de Computadores, Sistemas Operacionais, Banco de Dados, Redes, Engenharia de Software, Compiladores, Inteligência Artificial etc.;
+  \item \textbf{Formação humanística}: Direito da Informática, Informática e Sociedade, Introdução à História da Filosofia, Prática de Leitura e Produção de Textos;
+  \item \textbf{Eletivas e Facultativas}: amplo leque de disciplinas avançadas para personalização da trajetória acadêmica.
+\end{itemize}
+
+\paragraph{Matriz curricular por período (resumo).}
+\vspace{0.3em}
+
+\renewcommand{\arraystretch}{1.3}
+\noindent\colorbox{shadeCC}{\parbox{\dimexpr\linewidth-2\fboxsep}{%
+\textbf{1º Período:} Introdução à Programação, Eletrônica para Computação, Introdução à CC, Cálculo I, Geometria Analítica.\\
+\textbf{2º Período:} Matemática Discreta I, Estrutura de Dados I, Organização de Computadores, IHC, Prática de Leitura, Cálculo II.\\
+\textbf{3º Período:} Matemática Discreta II, Estrutura de Dados II, POO, Programação Funcional, Arquitetura de Computadores, Álgebra Linear.\\
+\textbf{4º Período:} Teoria dos Grafos, Sistemas Operacionais, Banco de Dados I, Engenharia de Software I, Cálculo Numérico, Estatística e Probabilidade.\\
+\textbf{5º Período:} Projeto e Análise de Algoritmos, Teoria da Computação, Redes de Computadores, Introdução ao Aprendizado de Máquina, Engenharia de Software II, Introdução à Otimização.\\
+\textbf{6º Período:} Processamento Digital de Imagens, Sistemas Distribuídos, Inteligência Artificial, Metodologia Científica, Construção de Compiladores I.\\
+\textbf{7º Período:} Monografia I, Eventos para CC, Informática e Sociedade, Computação Gráfica.\\
+\textbf{8º Período:} Monografia II, Introdução à História da Filosofia, Direito da Informática.
+}}
+
+\subsection{Trabalho de Conclusão de Curso (CC)}
+
+O TCC é composto por duas disciplinas sequenciais: \textbf{Monografia I} (7º período, 90h) e \textbf{Monografia II} (8º período, 120h). O trabalho é desenvolvido sob orientação de um docente do DECOM, podendo ser de natureza técnica, científica ou de extensão. As normas completas estão na Resolução COCIC Nº 01/2019.
+
+% ============================================================
+\section{Curso de Bacharelado em Inteligência Artificial}
+% ============================================================
+
+\subsection{Missão e Concepção}
+
+O curso de \ia{Bacharelado em Inteligência Artificial da UFOP} é uma resposta estratégica às transformações tecnológicas globais e às diretrizes do \textbf{Plano Brasileiro de Inteligência Artificial (PBIA)}, sob o lema \enquote{IA para o Bem de Todos}. Sua missão é capacitar egressos com sólida competência técnica, científica e ética para \impt{conceber, desenvolver e aplicar sistemas inteligentes} que contribuam para a solução de problemas complexos da sociedade.
+
+O objetivo geral é formar profissionais de nível superior aptos a desenvolver, aplicar e gerenciar sistemas inteligentes e autônomos, com formação de \textbf{classe mundial em IA}.
+
+\subsection{Perfil do Egresso}
+
+O egresso de IA deve ser capaz de desenvolver cinco competências específicas (CE), definidas pelos Referenciais de Formação da SBC para IA:
+
+\begin{itemize}
+  \item \textbf{CE-I:} Construir soluções computacionais para problemas complexos, com sólida formação em CC, Matemática e Estatística;
+  \item \textbf{CE-II:} Conhecer e aplicar os principais paradigmas de sistemas de IA, discernindo quando usar abordagens simbólicas ou conexionistas;
+  \item \textbf{CE-III:} Dominar o ciclo de vida dos dados --- aquisição, tratamento, mineração, visualização e aprendizado de máquina;
+  \item \textbf{CE-IV:} Criar soluções inovadoras para problemas complexos, compreendendo as perspectivas de negócios e oportunidades na área de IA;
+  \item \textbf{CE-V:} Agir de forma ética e socialmente consciente, abordando criticamente questões de privacidade, transparência, equidade e vieses algorítmicos.
+\end{itemize}
+
+\subsection{Eixos de Formação (Referenciais SBC para IA)}
+
+A grade curricular de IA foi organizada em torno de \textbf{sete eixos de formação} específicos para IA:
+
+\begin{enumerate}
+  \item \textbf{Fundamentos Matemáticos e Computacionais} --- bases teóricas em matemática, estatística e computação;
+  \item \textbf{Raciocínio e Representação de Conhecimento} --- lógica, ontologias, sistemas especialistas, raciocínio automático;
+  \item \textbf{Aprendizado de Máquina e Ciência de Dados} --- algoritmos supervisionados, não supervisionados, por reforço, e mineração de dados;
+  \item \textbf{Percepção e Atuação} --- Visão Computacional, Processamento de Linguagem Natural e Robótica;
+  \item \textbf{Engenharia de Sistemas Inteligentes} --- projeto e implantação de sistemas de IA em ambientes reais;
+  \item \textbf{Ética, Sociedade e Governança da IA} --- impactos sociais, legais e éticos dos sistemas de IA;
+  \item \textbf{Desenvolvimento Profissional e Aprendizado Contínuo} --- capacidade de adaptação e atualização permanente.
+\end{enumerate}
+
+\subsection{Organização Curricular de IA}
+
+A estrutura curricular de IA possui duas grandes bases:
+
+\begin{itemize}
+  \item \textbf{Formação básica}: Cálculo, Álgebra Linear, Matemática Discreta, Estatística, Fundamentos de Computação, Estruturas de Dados --- concentradas nos períodos iniciais;
+  \item \textbf{Formação profissional em IA}: disciplinas que desenvolvem habilidades específicas em sistemas inteligentes, aprendizado de máquina e ciência de dados, presentes desde o início e intensificando-se nos períodos posteriores.
+\end{itemize}
+
+\ntc{Um diferencial importante do currículo de IA são as quatro disciplinas de \textbf{Projeto: Resolução de Problemas do Mundo Real} (Projetos 1 a 4), que percorrem do 4º ao 7º período. Cada projeto tem 90 horas e inclui 90 horas extensionistas, garantindo que o aluno aplique progressivamente os conhecimentos adquiridos em problemas reais.}
+
+\paragraph{Matriz curricular por período (resumo).}
+
+\noindent\colorbox{shadeIA}{\parbox{\dimexpr\linewidth-2\fboxsep}{%
+\textbf{1º Período:} Introdução à IA, Introdução à Programação, Matemática Discreta I, Cálculo A, Geometria Analítica e Álgebra Linear.\\
+\textbf{2º Período:} IA Clássica, Estrutura de Dados I, Fund. de Arquitetura e Organização de Computadores, Estatística e Probabilidade, Cálculo B.\\
+\textbf{3º Período:} Introdução à Ciência de Dados, AM Supervisionado, AM Não Supervisionado, POO, Projeto e Análise de Algoritmos.\\
+\textbf{4º Período:} Engenharia de Software I, Redes Neurais e Aprendizagem em Profundidade, Introdução à Otimização, Inteligência de Negócios e Dados, Projeto 1.\\
+\textbf{5º Período:} Teoria dos Grafos, Aprendizado por Reforço, Fund. de Computação Paralela e Distribuída, Planejamento de Experimentos I, Projeto 2.\\
+\textbf{6º Período:} Processamento de Linguagem Natural, Visão Computacional, Metodologia Científica para IA, Projeto 3.\\
+\textbf{7º Período:} Análise de Séries Temporais I, Projeto 4.\\
+\textbf{8º Período:} Segurança, Ética e Sociedade em IA, Monografia.
+}}
+
+\subsection{Trabalho de Conclusão de Curso (IA)}
+
+O TCC do curso de IA assume o caráter de um \textbf{memorial acadêmico-profissional} que sistematiza e reflete criticamente sobre os trabalhos realizados durante os quatro Projetos. A disciplina \textbf{Monografia} (8º período, 90h) é responsável pela escrita e defesa. O objetivo é que o discente evidencie não apenas produtos técnicos, mas a trajetória formativa e os impactos sociais e tecnológicos de suas soluções.
+
+% ============================================================
+\section{Departamentos Envolvidos nos Cursos}
+% ============================================================
+
+Um aspecto fundamental da organização acadêmica de ambos os cursos é que diversas disciplinas são ofertadas por departamentos \textbf{fora do DECOM}. Isso reflete o caráter multidisciplinar da computação e da inteligência artificial.
+
+\subsection{Departamentos que integram o Colegiado de CC}
+
+Os seguintes departamentos oferecem disciplinas \textbf{obrigatórias} em CC e, por isso, têm representação no Colegiado do Curso de Ciência da Computação (COCIC):
+
+\begin{itemize}
+  \item \textbf{Centro de Educação Aberta e à Distância (CEAD)} --- oferta a disciplina de Prática de Leitura e Produção de Textos (EaD);
+  \item \textbf{Departamento de Direito (DEDIR)} --- oferta Direito da Informática;
+  \item \textbf{Departamento de Estatística (DEEST)} --- oferta Estatística e Probabilidade;
+  \item \textbf{Departamento de Filosofia (DEFIL)} --- oferta Introdução à História da Filosofia;
+  \item \textbf{Departamento de Matemática (DEMAT)} --- oferta Cálculo I e II, Geometria Analítica e Álgebra Linear.
+\end{itemize}
+
+\subsection{Departamentos que integram o Colegiado de IA}
+
+Os seguintes departamentos oferecem disciplinas \textbf{obrigatórias} em IA e têm representação no colegiado do curso:
+
+\begin{itemize}
+  \item \textbf{Departamento de Matemática (DEMAT)} --- oferta Cálculo A, Cálculo B e Geometria Analítica e Álgebra Linear;
+  \item \textbf{Departamento de Estatística (DEEST)} --- oferta Estatística e Probabilidade, Planejamento de Experimentos I e Análise de Séries Temporais I.
+\end{itemize}
+
+Além disso, os departamentos a seguir oferecem disciplinas \textbf{eletivas} optativas para o currículo de IA: DECOM, DEEST, Departamento de Física (DEFIS) e Departamento de Ciências Biológicas (DECBI).
+
+\subsection{Representação gráfica da interação entre departamentos}
+
+\vspace{0.5em}
+\begin{center}
+\begin{tikzpicture}[
+  dept/.style={rectangle, rounded corners, draw, minimum width=2.5cm, minimum height=0.8cm, align=center, font=\small},
+  curso/.style={rectangle, rounded corners, draw, minimum width=3.2cm, minimum height=1cm, align=center, font=\small\bfseries},
+  arr/.style={-Stealth, thick},
+  ]
+
+  % DECOM (central)
+  \node[curso, fill=gray!15] (decom) at (0,0) {DECOM\\\small(departamento central)};
+
+  % Cursos
+  \node[curso, fill=shadeCC, right=3.5cm of decom] (cc) {Bacharelado em\\Ciência da Computação};
+  \node[curso, fill=shadeIA, left=3.5cm of decom] (ia) {Bacharelado em\\Inteligência Artificial};
+
+  % Departamentos parceiros
+  \node[dept, fill=yellow!20, above=1.5cm of decom] (demat) {DEMAT\\Matemática};
+  \node[dept, fill=orange!20, above right=1cm and 2cm of demat] (deest) {DEEST\\Estatística};
+  \node[dept, fill=purple!15, below right=0.5cm and 2.5cm of decom] (dedir) {DEDIR\\Direito};
+  \node[dept, fill=blue!10, below left=0.5cm and 2.5cm of decom] (defil) {DEFIL\\Filosofia};
+  \node[dept, fill=green!10, below=1.8cm of decom] (cead) {CEAD\\EaD};
+  \node[dept, fill=teal!10, above left=1cm and 2cm of demat] (defis) {DEFIS\\Física (elet.)};
+  \node[dept, fill=lime!20, above left=1cm and -0.5cm of ia] (decbi) {DECBI\\Biologia (elet.)};
+
+  % Setas DECOM -> cursos
+  \draw[arr, cccolor, very thick] (decom) -- (cc) node[midway, above, font=\footnotesize]{disciplinas};
+  \draw[arr, iacolor, very thick] (decom) -- (ia) node[midway, above, font=\footnotesize]{disciplinas};
+
+  % Setas parceiros -> CC
+  \draw[arr, gray] (demat) -- (cc);
+  \draw[arr, gray] (deest) -- (cc);
+  \draw[arr, gray] (dedir) -- (cc);
+  \draw[arr, gray] (defil) -- (cc);
+  \draw[arr, gray] (cead)  -- (cc);
+
+  % Setas parceiros -> IA
+  \draw[arr, gray] (demat) -- (ia);
+  \draw[arr, gray] (deest) -- (ia);
+  \draw[arr, gray, dashed] (defis) -- (ia) node[pos=0.5, above, font=\tiny]{elet.};
+  \draw[arr, gray, dashed] (decbi) -- (ia) node[pos=0.5, left, font=\tiny]{elet.};
+
+\end{tikzpicture}
+\end{center}
+
+\begin{remark}
+O Colegiado de cada curso é composto por representantes de todos os departamentos que oferecem disciplinas obrigatórias. Isso significa que, ao solicitar aproveitamento ou adaptação de disciplinas, o aluno pode interagir com professores de diferentes departamentos, além do DECOM.
+\end{remark}
+
+% ============================================================
+\section{Como os Cursos se Relacionam Entre Si}
+% ============================================================
+
+Embora CC e IA sejam cursos distintos, eles compartilham uma base comum e interagem de diversas formas:
+
+\paragraph{Base curricular compartilhada.}
+Os dois cursos têm fundamentos em comum: programação, estruturas de dados, matemática (cálculo, álgebra linear, matemática discreta) e estatística. Essa sobreposição é intencional e reflete as raízes comuns da Ciência da Computação e da IA.
+
+\paragraph{Disciplinas em comum.}
+Grande parte das disciplinas de código \texttt{BCC} ofertadas pelo DECOM aparece nos dois currículos --- ora como obrigatória em um e eletiva no outro, ora com a mesma função. Exemplos notáveis: Estrutura de Dados I, POO, Teoria dos Grafos, Projeto e Análise de Algoritmos, Redes Neurais e Aprendizagem em Profundidade.
+
+\paragraph{Transição entre cursos (reopção).}
+O PPC do curso de IA prevê explicitamente a \textbf{adição de formação} para alunos que vierem do curso de Ciência da Computação da UFOP, reconhecendo a proximidade entre os dois percursos.
+
+\paragraph{Foco e especialização.}
+\begin{itemize}
+  \item \cc{CC} tem foco mais amplo e generalista: abrange desde eletrônica e sistemas embarcados até compiladores, redes, IA e computação gráfica, formando um profissional capaz de atuar em qualquer área da computação.
+  \item \ia{IA} tem foco especializado: toda a grade converge para a formação de um especialista em sistemas inteligentes, com disciplinas dedicadas a cada subárea de IA (visão, linguagem, reforço, otimização, ética em IA).
+\end{itemize}
+
+\paragraph{Infraestrutura e corpo docente compartilhados.}
+Ambos os cursos utilizam os mesmos laboratórios do DECOM, os mesmos técnicos-administrativos e, em grande medida, o mesmo corpo docente. Isso cria oportunidades naturais de colaboração entre alunos dos dois cursos, especialmente em projetos de pesquisa, extensão e na Empresa Júnior \textbf{Voluta Soluções Digitais}.
+
+% ============================================================
+\section{Vida Acadêmica: Oportunidades Além da Sala de Aula}
+% ============================================================
+
+\subsection{Pesquisa e Extensão}
+
+Ambos os cursos incentivam fortemente a participação em atividades de \textbf{pesquisa e extensão}:
+\begin{itemize}
+  \item \textbf{Iniciação Científica (IC)}: oportunidade de desenvolver projetos de pesquisa com apoio de bolsas (CNPq, FAPEMIG, PIBIC/UFOP);
+  \item \textbf{Atividades Extensionistas}: obrigatórias em ambos os currículos (10\% da carga horária), com disciplinas e projetos voltados à interação com a comunidade;
+  \item \textbf{Atividades Acadêmico-Científico Culturais (AACCs)}: participação em eventos, cursos, monitorias, publicações e outras atividades complementares.
+\end{itemize}
+
+\subsection{Empresa Júnior}
+
+A \textbf{Voluta Soluções Digitais} é a empresa júnior do DECOM, aberta a alunos de CC. Fundada em 2016, a Voluta oferece ao estudante experiência prática em projetos reais para micro e pequenas empresas, desenvolvendo visão empreendedora, trabalho em equipe e habilidades de gestão.
+
+\subsection{Pós-Graduação}
+
+O DECOM mantém o \textbf{Programa de Pós-Graduação em Ciência da Computação (PPGCC)}, com mestrado e doutorado. O PPC de CC prevê mecanismos de integração entre a graduação e o PPGCC, como aproveitamento de disciplinas e participação em grupos de pesquisa. Esse canal está naturalmente aberto também aos alunos de IA.
+
+% ============================================================
+\section{Síntese: O Que Você Precisa Saber ao Ingressar}
+% ============================================================
+
+\begin{enumerate}
+  \item \impt{Você está em um dos cursos de computação mais sólidos do país}, em uma universidade pública federal com tradição em pesquisa e extensão.
+  \item \ntc{Seu departamento central é o DECOM, mas você terá professores de pelo menos três a cinco outros departamentos ao longo do curso.}
+  \item A grade curricular é \textbf{semestral}: você pode se matricular em até 6 disciplinas por semestre a partir do 2º período.
+  \item Existem \textbf{pré-requisitos} que devem ser respeitados: progresso nos períodos iniciais é fundamental para não criar gargalos nos períodos intermediários e finais.
+  \item O \textbf{Colegiado do Curso} é o seu principal canal para questões acadêmicas: aproveitamento de disciplinas, reopção, planos de estudo especiais.
+  \item Tanto CC quanto IA possuem um robusto catálogo de \textbf{disciplinas eletivas}: aproveite para personalizar sua formação de acordo com suas áreas de interesse.
+  \item O TCC é obrigatório e representa o fechamento da sua trajetória acadêmica --- planeje-se para iniciá-lo no período correto.
+\end{enumerate}
+
+\bigskip
+\noindent\colorbox{shadegray}{\parbox{\dimexpr\linewidth-2\fboxsep}{%
+\textbf{Para a próxima aula:} Exploraremos as competências e habilidades específicas de cada curso com maior profundidade, relacionando-as às oportunidades no mercado de trabalho e nas carreiras de pesquisa.
+}}
+
+\end{document}
