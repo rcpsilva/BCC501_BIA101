@@ -1,0 +1,696 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ======================
+% Packages
+% ======================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{array}
+
+% ======================
+% Colors
+% ======================
+\definecolor{mblack}{RGB}{20, 20, 20}
+\definecolor{mblue}{RGB}{75, 36, 74}
+\definecolor{morange}{RGB}{152, 193, 217}
+\definecolor{mwhite}{RGB}{255, 255, 255}
+\definecolor{mcc}{RGB}{30, 100, 180}
+\definecolor{mia}{RGB}{20, 140, 80}
+\definecolor{mcclight}{RGB}{220, 235, 255}
+\definecolor{mialight}{RGB}{210, 245, 225}
+% Categorias de disciplinas
+\definecolor{catmat}{RGB}{208, 228, 248}
+\definecolor{catprog}{RGB}{254, 236, 200}
+\definecolor{catia}{RGB}{200, 235, 210}
+\definecolor{catproj}{RGB}{235, 215, 245}
+\definecolor{catest}{RGB}{255, 245, 200}
+\definecolor{cathum}{RGB}{250, 215, 225}
+\definecolor{catsw}{RGB}{210, 235, 255}
+\definecolor{cattcc}{RGB}{230, 220, 250}
+\definecolor{catext}{RGB}{210, 245, 248}
+\definecolor{catopt}{RGB}{230, 232, 234}
+% Cores adicionais para os desafios
+\definecolor{dsfai}{RGB}{230, 245, 220}
+\definecolor{dsfcib}{RGB}{220, 230, 250}
+\definecolor{dsfqua}{RGB}{255, 240, 220}
+\definecolor{dsfnet}{RGB}{220, 245, 245}
+\definecolor{dsfsus}{RGB}{240, 255, 230}
+\definecolor{dsfsoc}{RGB}{255, 230, 230}
+
+% ======================
+% Theme & Style
+% ======================
+\usetheme{default}
+\usecolortheme{default}
+\setbeamercolor{normal text}{fg=mblack, bg=white}
+\setbeamercolor{frametitle}{fg=white, bg=mblue}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{itemize item}{fg=morange}
+\setbeamercolor{itemize subitem}{fg=mblue}
+\setbeamercolor{enumerate item}{fg=morange}
+\setbeamercolor{enumerate subitem}{fg=mblue}
+\setbeamercolor{block title}{fg=white, bg=mblue}
+\setbeamercolor{block body}{fg=mblack, bg=mblue!8}
+\setbeamercolor{alerted text}{fg=morange}
+
+\setbeamerfont{frametitle}{series=\bfseries, size=\large}
+\setbeamerfont{title}{series=\bfseries, size=\LARGE}
+\setbeamerfont{block title}{series=\bfseries}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Footer
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.7\paperwidth, ht=2.25ex, dp=1ex, leftskip=0.3cm]{normal text}%
+      \tiny\color{mblack!50} DECOM -- Áreas de Atuação, Pesquisa e Extensão
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.3\paperwidth, ht=2.25ex, dp=1ex, rightskip=0.3cm, right]{normal text}%
+      \tiny\color{mblack!50}\insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+% Frametitle com barra
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0.2cm, leftskip=0.5cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+  \vspace{-0.1cm}%
+  \textcolor{morange}{\rule{\paperwidth}{2pt}}%
+}
+
+% Title page
+\setbeamercolor{titlebar top}{bg=mwhite}
+\setbeamercolor{titlebar main}{bg=mblue}
+\setbeamercolor{titlebar bottom}{bg=morange}
+
+\setbeamertemplate{title page}{%
+  \vspace{0pt}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0pt]{titlebar top}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=3.8cm, dp=0pt, center]{titlebar main}%
+    \vspace{0.6cm}
+    {\usebeamerfont{title}\color{white}\inserttitle\par}%
+    \vspace{0.35cm}
+    {\color{white}\small\insertauthor\par}%
+    \vspace{0.15cm}
+    {\color{white}\footnotesize\insertdate\par}%
+    \vspace{0.25cm}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=1.3cm, dp=0pt]{titlebar bottom}%
+  \end{beamercolorbox}%
+}
+
+\setlength{\itemsep}{4pt}
+
+\newcommand{\impt}[1]{\textcolor{morange}{\textbf{#1}}}
+\newcommand{\ntc}[1]{\textcolor{mblue}{#1}}
+\newcommand{\cc}[1]{\textcolor{mcc}{\textbf{#1}}}
+\newcommand{\ia}[1]{\textcolor{mia}{\textbf{#1}}}
+
+% ======================
+% Document Info
+% ======================
+\title{Aula 2 --- Áreas de Atuação, Pesquisa e Extensão}
+\author{Departamento de Computação (DECOM) -- UFOP}
+\date{\today}
+
+% ======================
+% Document
+% ======================
+\begin{document}
+
+% --- Capa ---
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% --- Sumário ---
+\begin{frame}{Sumário}
+  \tableofcontents
+\end{frame}
+
+% ==============================================================
+\section{Áreas de Atuação em IA}
+% ==============================================================
+
+\begin{frame}{Onde trabalha quem se forma em IA?}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \ia{Indústria e Tecnologia}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Engenheiro de ML / Cientista de Dados
+        \item Desenvolvedor de sistemas inteligentes
+        \item Pesquisador em IA em laboratórios corporativos
+        \item Especialista em IA generativa e LLMs
+        \item Engenheiro de dados e plataformas
+      \end{itemize}
+      \vspace{0.2cm}
+      \pause
+      \ia{Setor Público e Terceiro Setor}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Análise de políticas públicas com dados
+        \item Sistemas de saúde e educação assistidos por IA
+        \item Detecção de fraudes e desinformação
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \pause
+      \ia{Pesquisa Acadêmica}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Mestrado e doutorado (PPGCC/UFOP e outros)
+        \item Pesquisa em aprendizado de máquina, PLN, visão computacional, robótica
+        \item Publicações em conferências top: NeurIPS, ICML, ICLR, AAAI
+      \end{itemize}
+      \pause
+      \vspace{0.3cm}
+      \begin{alertblock}{Mercado aquecido}
+        IA é hoje uma das áreas com \impt{maior demanda} no Brasil e no mundo.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{IA: da Graduação à Carreira}
+  \begin{block}{O que o curso forma}
+    Profissionais capazes de \impt{construir}, \impt{avaliar} e \impt{implantar} sistemas inteligentes --- não apenas usuários de ferramentas prontas.
+  \end{block}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Habilidades técnicas desenvolvidas:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Modelagem e treinamento de redes neurais
+        \item Projeto e análise de algoritmos de ML
+        \item Processamento de linguagem natural e visão
+        \item Computação paralela e distribuída para IA
+        \item Ética e governança de sistemas de IA
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Disciplinas que sustentam isso:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item \ntc{AM Supervisionado/Não Supervisionado}
+        \item \ntc{Redes Neurais e Deep Learning}
+        \item \ntc{Processamento de Linguagem Natural}
+        \item \ntc{Visão Computacional}
+        \item \ntc{Projetos 1--4} (problemas reais)
+        \item \ntc{Segurança, Ética e Sociedade na IA}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ==============================================================
+\section{Áreas de Atuação em CC}
+% ==============================================================
+
+\begin{frame}{Onde trabalha quem se forma em CC?}
+  \vspace{-0.2cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \cc{Desenvolvimento e Engenharia}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Desenvolvedor de software (back, front, full stack)
+        \item Engenheiro de sistemas e infraestrutura
+        \item Arquiteto de soluções e nuvem
+        \item Especialista em segurança da informação
+        \item Desenvolvedor de compiladores, SO, jogos
+      \end{itemize}
+      \vspace{-0.2cm}
+       \pause
+       \footnotesize
+      \begin{alertblock}{\footnotesize Generalismo como vantagem}
+        O profissional de CC transita por \impt{qualquer} área da tecnologia. A formação sólida em fundamentos abre portas que especializações prematuras fecham.
+      \end{alertblock}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \pause
+       \cc{Pesquisa e Academia}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Teoria da computação, algoritmos, otimização
+        \item Computação gráfica, redes, bancos de dados
+        \item Qualquer subárea --- CC é a base de tudo
+      \end{itemize}
+      \pause
+      \cc{Áreas Interdisciplinares}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Computação científica (saúde, bioinformática, física)
+        \item Fintech, legaltech, govtech
+        \item Empreendedorismo tecnológico e startups
+      \end{itemize}
+    
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{CC: da Graduação à Carreira}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Habilidades técnicas desenvolvidas:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Projeto e análise de algoritmos
+        \item Sistemas operacionais e arquitetura
+        \item Engenharia de software e qualidade
+        \item Redes de computadores e segurança
+        \item Computação gráfica e visualização
+        \item Inteligência artificial e otimização
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Disciplinas que sustentam isso:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item \ntc{Projeto e Análise de Algoritmos}
+        \item \ntc{Estruturas de Dados I e II}
+        \item \ntc{Sistemas Operacionais}
+        \item \ntc{Engenharia de Software I e II}
+        \item \ntc{Redes de Computadores}
+        \item \ntc{Teoria dos Grafos, Compiladores}
+      \end{itemize}
+      \pause
+      \vspace{0.2cm}
+      \begin{alertblock}{Monografia + PPGCC}
+        CC abre acesso direto ao \textbf{PPGCC/UFOP} --- mestrado e doutorado para quem quiser aprofundar.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ==============================================================
+\section{Pesquisa Universitária}
+% ==============================================================
+
+\begin{frame}{O que é Pesquisa Universitária?}
+  \begin{block}{Definição}
+    Pesquisa universitária é a \impt{produção de conhecimento novo} por meio de método científico rigoroso, com o objetivo de expandir as fronteiras do saber --- não apenas aplicar o que já existe.
+  \end{block}
+  \vspace{0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Características:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Parte de uma \ntc{pergunta de pesquisa} bem definida
+        \item Fundamentada na literatura científica existente
+        \item Metodologia reproduzível e auditável
+        \item Resultado disseminado (artigo, dissertação, patente)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Modalidades no contexto da graduação:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item \impt{Iniciação Científica (IC)} --- bolsas CNPq, FAPEMIG, PIBIC/UFOP
+        \item Voluntária (sem bolsa, mas conta como AACC)
+        \item TCC com orientação de pesquisador
+        \item Coautoria em publicações científicas
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Por que fazer pesquisa na graduação?}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Para o mercado:}
+      \begin{itemize}\setlength\itemsep{4pt}
+        \item Diferencial competitivo real no currículo
+        \item Desenvolve leitura crítica e resolução de problemas abertos
+        \item Publicações e premiações são valorizadas
+        \item Experiência com ferramentas de ponta antes de todo mundo
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Para a pós-graduação:}
+      \begin{itemize}\setlength\itemsep{4pt}
+        \item Pré-requisito prático para ingresso no mestrado
+        \item Forma o vínculo com o orientador
+        \item Define a linha de pesquisa do TCC e da pós
+        \item Acesso a recursos: servidores, dados, colaborações
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \pause
+  \vspace{0.3cm}
+  \begin{alertblock}{Como começar?}
+    Procure um professor cujos temas te interessem --- leia os artigos dele antes da conversa. O DECOM tem grupos de pesquisa ativos em IA, otimização, segurança, computação gráfica e mais.
+  \end{alertblock}
+\end{frame}
+
+% ==============================================================
+\section{Extensão Universitária}
+% ==============================================================
+
+\begin{frame}{O que é Extensão Universitária?}
+  \begin{block}{Definição}
+    Extensão é a \impt{aplicação do conhecimento acadêmico na sociedade}, com retorno para o ensino e a pesquisa. É o canal que conecta a universidade às comunidades reais.
+  \end{block}
+  \vspace{0.0cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Formas de extensão:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Projetos de extensão com comunidades
+        \item Cursos e oficinas abertos ao público
+        \item Consultorias e parcerias com setor produtivo
+        \item Empresa Júnior (\textbf{Voluta Soluções Digitais})
+        \item Disciplinas extensionistas (\ntc{Projetos 1--4 no IA})
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Por que é obrigatória?}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Lei de Diretrizes e Bases (LDB): \impt{10\% da carga horária} do curso deve ser extensionista
+        \item CC: 330h extensionistas
+        \item IA: 360h extensionistas (Projetos 1--4)
+        \item Forma profissionais com \ntc{consciência social} e visão de impacto real
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Pesquisa vs.\ Extensão: diferença prática}
+  \footnotesize
+  \centering
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{lp{5cm}p{5cm}}
+    \toprule
+    & \textbf{Pesquisa} & \textbf{Extensão} \\
+    \midrule
+    Objetivo     & Produzir conhecimento novo & Aplicar conhecimento na sociedade \\
+    Público      & Comunidade científica & Comunidade externa (empresas, escolas, ONGs...) \\
+    Produto      & Artigo, dissertação, patente & Projeto, curso, sistema, consultoria \\
+    Métricas     & Publicações, citações, índice H & Alcance social, parcerias, impacto medido \\
+    Na grade     & IC, TCC & Projetos extensionistas, Voluta \\
+    \bottomrule
+  \end{tabular}
+  \pause
+  \begin{block}{As três funções são indissociáveis}
+    Ensino $\leftrightarrow$ Pesquisa $\leftrightarrow$ Extensão. O que você aprende em sala alimenta a pesquisa; o que você descobre na pesquisa melhora o que leva para a extensão; o que você vê na extensão levanta novas perguntas de pesquisa.
+  \end{block}
+\end{frame}
+
+% ==============================================================
+\section{Grandes Desafios da Computação no Brasil}
+% ==============================================================
+
+\begin{frame}{Os Grandes Desafios da Computação (SBC, 2025--2035)}
+  \begin{block}{Contexto}
+    Em 2024, a \textbf{Sociedade Brasileira de Computação (SBC)} reuniu $\approx$70 pesquisadores para definir os \impt{6 grandes desafios} da área para a próxima década.
+  \end{block}
+  \vspace{0.3cm}
+  \begin{enumerate}\setlength\itemsep{4pt}
+    \item \colorbox{dsfai}{\parbox{0.85\textwidth}{\small \textbf{IA Responsável:} Evolução responsável de IA e tecnologias correlatas}}
+    \item \colorbox{dsfcib}{\parbox{0.85\textwidth}{\small \textbf{Cibersegurança:} Frente à transição quântica, à IA e a fatores humanos}}
+    \item \colorbox{dsfqua}{\parbox{0.85\textwidth}{\small \textbf{Computação Quântica:} Redes seguras, alto desempenho e sensoriamento}}
+    \item \colorbox{dsfnet}{\parbox{0.85\textwidth}{\small \textbf{Internet Ubíqua:} Acesso universal, sustentável, resiliente e seguro}}
+    \item \colorbox{dsfsus}{\parbox{0.85\textwidth}{\small \textbf{Computação Sustentável:} Redução do impacto socioambiental}}
+    \item \colorbox{dsfsoc}{\parbox{0.85\textwidth}{\small \textbf{Computação e Sociedade:} Ecossistemas éticos, inclusivos e interdisciplinares}}
+  \end{enumerate}
+\end{frame}
+
+% ------- Desafio 1 -------
+\begin{frame}{\colorbox{dsfai}{\textcolor{black}{Desafio 1: IA Responsável}}}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \textbf{O que envolve:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Qualidade, proveniência e curadoria de dados
+        \item Algoritmos confiáveis, explicáveis e robustos
+        \item Controle de LLMs e modelos generativos
+        \item Plataformas eficientes de hardware/software
+        \item Ética no ciclo de vida completo da IA
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Oportunidades de \impt{pesquisa}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item IC em detecção de viés algorítmico
+        \item TCC sobre explicabilidade de modelos
+        \item Contribuição a benchmarks e datasets brasileiros
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Oportunidades de \ntc{extensão}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item Projetos 1--4 aplicando IA a problemas reais locais
+        \item Oficinas sobre uso crítico de IA para público geral
+        \item Parcerias com prefeituras e serviço público
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Disciplinas do curso que te preparam:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \ia{AM Supervisionado / Não Supervisionado}
+        \item \ia{Redes Neurais e Deep Learning}
+        \item \ia{Segurança, Ética e Sociedade na IA}
+        \item \cc{P\&A Algoritmos}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ------- Desafio 2 -------
+\begin{frame}{\colorbox{dsfcib}{\textcolor{black}{Desafio 2: Cibersegurança}}}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \textbf{O que envolve:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Criptografia resistente a computadores quânticos
+        \item Segurança de sistemas de IA (\emph{adversarial ML})
+        \item Fatores humanos: engenharia social, usabilidade
+        \item Gestão de identidade e confiança zero
+        \item Déficit estimado de 140--750 mil profissionais no Brasil (2024)
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Oportunidades de \impt{pesquisa}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item IC em criptografia pós-quântica
+        \item TCC sobre detecção de ataques com ML
+        \item Pesquisa em privacidade diferencial
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Oportunidades de \ntc{extensão}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item Capacitação em segurança digital para PMEs
+        \item Projetos de conscientização para usuários leigos
+        \item Parcerias com órgãos municipais de TI
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Disciplinas do curso que te preparam:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \cc{Redes de Computadores}
+        \item \cc{Sistemas Operacionais}
+        \item \ia{Segurança, Ética e Sociedade na IA}
+        \item \cc{Matemática Discreta}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ------- Desafio 3 -------
+\begin{frame}{\colorbox{dsfqua}{\textcolor{black}{Desafio 3: Computação Quântica}}}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \textbf{O que envolve:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Hardware quântico: qubits, correção de erros, escalabilidade
+        \item Algoritmos quânticos com vantagem prática
+        \item Redes quânticas e QKD (\emph{quantum key distribution})
+        \item Brasil: redes quânticas em Recife, SP e Rio já em operação experimental
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Oportunidades de \impt{pesquisa}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item IC em simulação de algoritmos quânticos
+        \item TCC sobre otimização quântica aplicada
+        \item Colaboração com grupos de física quântica
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Oportunidades de \ntc{extensão}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item Divulgação científica sobre computação quântica
+        \item Minicursos usando simuladores como Qiskit
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Disciplinas do curso que te preparam:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \cc{Álgebra Linear e Geometria Analítica}
+        \item \cc{P\&A Algoritmos} (complexidade)
+        \item \ia{Computação Paralela e Distribuída}
+        \item Matemática (Cálculo A/B, Estatística)
+      \end{itemize}
+      \begin{alertblock}{\small Área emergente}
+        Mercado global projetado em US\$\,45--131 bilhões até 2040 (McKinsey).
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ------- Desafio 4 -------
+\begin{frame}{\colorbox{dsfnet}{\textcolor{black}{Desafio 4: Internet Ubíqua}}}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \textbf{O que envolve:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Conectividade em áreas remotas do Brasil
+        \item IoT em larga escala: sensores, cidades inteligentes
+        \item Redes sustentáveis e \emph{green networking}
+        \item Resiliência a desastres naturais (enchentes, ciclones)
+        \item Literacia digital para inclusão significativa
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Oportunidades de \impt{pesquisa}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item IC em redes de baixo custo para regiões rurais
+        \item TCC sobre SDN e gerenciamento autônomo de redes
+        \item Pesquisa em protocolos resilientes
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Oportunidades de \ntc{extensão}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item Implantação de redes comunitárias
+        \item Cursos de inclusão digital em escolas públicas
+        \item Projetos de IoT para monitoramento ambiental local
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Disciplinas do curso que te preparam:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \cc{Redes de Computadores}
+        \item \ia{Computação Paralela e Distribuída}
+        \item \cc{Sistemas Operacionais}
+        \item \ia{Projetos 1--4} (aplicações reais)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ------- Desafio 5 -------
+\begin{frame}{\colorbox{dsfsus}{\textcolor{black}{Desafio 5: Computação Sustentável}}}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \textbf{O que envolve:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item TICs: 5--6\% da energia global, 1,7--4\% das emissões de GEE
+        \item Data centers: consumo pode dobrar até 2026 (IEA)
+        \item Algoritmos energeticamente eficientes
+        \item Hardware especializado (CPUs $\to$ GPUs $\to$ ASICs)
+        \item Programação consciente de emissões de carbono
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Oportunidades de \impt{pesquisa}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item IC em otimização de código para baixo consumo
+        \item TCC sobre escalonamento ciente de carbono
+        \item Benchmarks de eficiência energética em ML
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Oportunidades de \ntc{extensão}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item Auditorias de consumo energético em sistemas legados
+        \item Sensibilização de empresas locais sobre TI verde
+        \item Projetos de otimização para prefeituras
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Disciplinas do curso que te preparam:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \cc{P\&A Algoritmos} (complexidade e eficiência)
+        \item \ia{Computação Paralela e Distribuída}
+        \item \cc{Arquitetura e Organização de Computadores}
+        \item \ia{Introdução à Otimização}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ------- Desafio 6 -------
+\begin{frame}{\colorbox{dsfsoc}{\textcolor{black}{Desafio 6: Computação e Sociedade}}}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \textbf{O que envolve:}
+      \begin{itemize}\setlength\itemsep{3pt}
+        \item Ecossistemas computacionais éticos e inclusivos
+        \item Combate à desinformação e fake news
+        \item Interfaces naturais para populações vulneráveis
+        \item Auditoria algorítmica e governança de dados
+        \item Políticas públicas baseadas em evidências
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Oportunidades de \impt{pesquisa}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item IC em detecção automática de desinformação
+        \item TCC sobre acessibilidade e IHC para idosos
+        \item Pesquisa interdisciplinar com Ciências Sociais
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Oportunidades de \ntc{extensão}:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item Ferramentas digitais para comunidades de baixa renda
+        \item Workshops de cidadania digital em escolas
+        \item Participação em consultas públicas tecnológicas
+      \end{itemize}
+      \vspace{0.2cm}
+      \textbf{Disciplinas do curso que te preparam:}
+      \begin{itemize}\setlength\itemsep{2pt}
+        \item \ia{Segurança, Ética e Sociedade na IA}
+        \item \ia{Metodologia Científica em IA}
+        \item \cc{Direito da Informática} (no CC)
+        \item \ia{Projetos 1--4} (impacto real)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ==============================================================
+\section{Síntese e Próximos Passos}
+% ==============================================================
+
+\begin{frame}{Os Desafios e Suas Disciplinas: Visão Geral}
+  \vspace{0.1cm}
+  \renewcommand{\arraystretch}{1.3}
+  \small
+  \begin{tabular}{p{3.8cm}p{5.4cm}p{3.4cm}}
+    \toprule
+    \textbf{Desafio (SBC)} & \textbf{Disciplinas centrais} & \textbf{P/E*} \\
+    \midrule
+    \colorbox{dsfai}{IA Responsável}        & AM Sup./Não Sup., Redes Neurais, Ética e Soc. IA, P\&A Alg. & IC, TCC, Projetos \\
+    \colorbox{dsfcib}{Cibersegurança}       & Redes, SO, Mat. Discreta, Ética e Soc. IA & IC, TCC, Extensão \\
+    \colorbox{dsfqua}{Computação Quântica}  & Álg. Linear, P\&A Alg., Comp. Paralela & IC, TCC \\
+    \colorbox{dsfnet}{Internet Ubíqua}      & Redes, SO, Comp. Paralela, Projetos & IC, TCC, Extensão \\
+    \colorbox{dsfsus}{Comp. Sustentável}    & P\&A Alg., Arq. Org., Otimização & IC, TCC, Extensão \\
+    \colorbox{dsfsoc}{Computação e Soc.}    & Ética e Soc. IA, Metod. Cient., Projetos & IC, TCC, Extensão \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.2cm}
+
+  {\footnotesize *P = Pesquisa (IC/TCC) \quad E = Extensão (Projetos, Voluta, ações comunitárias)}
+\end{frame}
+
+\begin{frame}{O Que Fazer Agora?}
+  \begin{enumerate}\setlength\itemsep{6pt}
+    \item \impt{Explore os grupos de pesquisa do DECOM} --- leia os perfis dos professores no site do departamento e nos repositórios de artigos (Google Scholar, Lattes)
+    \item \ntc{Identifique qual dos 6 desafios te interessa mais} --- você não precisa decidir agora, mas é bom começar a pensar
+    \item \textbf{Não pule os fundamentos} --- Algoritmos, Matemática e Estruturas de Dados são a base de todo o resto; sem eles, nenhum dos desafios fica ao alcance
+    \item \textbf{Participe de eventos} --- CSBC, SBSeg, BRACIS, SBRC são conferências brasileiras em computação; muitos aceitam trabalhos de alunos de graduação
+    \item \textbf{Considere a extensão desde cedo} --- a Voluta e os Projetos do curso de IA são caminhos concretos para aplicar o que você aprende antes de se formar
+  \end{enumerate}
+\end{frame}
+
+\end{document}

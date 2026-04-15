@@ -1,0 +1,7 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Áreas de Atuação em IA}{3}{0}{1}
+\beamer@sectionintoc {2}{Áreas de Atuação em CC}{8}{0}{2}
+\beamer@sectionintoc {3}{Pesquisa Universitária}{14}{0}{3}
+\beamer@sectionintoc {4}{Extensão Universitária}{17}{0}{4}
+\beamer@sectionintoc {5}{Grandes Desafios da Computação no Brasil}{20}{0}{5}
+\beamer@sectionintoc {6}{Síntese e Próximos Passos}{27}{0}{6}
