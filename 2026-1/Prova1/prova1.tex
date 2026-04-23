@@ -1,0 +1,82 @@
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage{parskip}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage{mdframed}
+\usepackage{pgffor}
+\usepackage{tabto}
+
+\newcommand{\answerlines}[1]{%
+  \par\vspace{4pt}%
+  \foreach \n in {1,...,#1}{%
+    \noindent\makebox[\linewidth]{\dotfill}\\[6pt]%
+  }%
+}
+
+\definecolor{important}{RGB}{255, 100, 100}
+\definecolor{notice}{RGB}{0, 102, 204}
+\definecolor{headerblue}{RGB}{152, 38, 73}
+\definecolor{accentblue}{RGB}{113, 162, 182}
+
+\newcommand{\impt}[1]{\textcolor{important}{\textbf{#1}}}
+\newcommand{\ntc}[1]{\textcolor{notice}{#1}}
+
+\setlist{nosep}
+\geometry{margin=2.5cm, top=1.5cm}
+
+% Caixa para observações/gabarito
+\newmdenv[
+  linecolor=headerblue,
+  backgroundcolor=headerblue!6,
+  linewidth=1.2pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+  skipabove=6pt,
+  skipbelow=6pt
+]{notebox}
+
+\title{%
+  \vspace{-1cm}%
+  \textcolor{headerblue}{\textbf{Prova 1}}\\[4pt]
+  \large Apresentação dos Cursos de CC e IA --- DECOM/UFOP
+}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1cm}
+
+\begin{notebox}
+  \textbf{Instruções.} Responda à questão a seguir de forma clara, objetiva e bem fundamentada.
+  Não basta descrever o que está na grade curricular, espera-se \impt{análise crítica}.
+\end{notebox}
+
+\vspace{0.5cm}
+
+% ------------------------------------------------------------------
+\begin{enumerate}
+
+  \item Os cursos de Ciência da Computação e Inteligência Artificial compartilham
+  disciplinas como Estruturas de Dados, POO, Teoria dos Grafos e Algoritmos, além
+  do mesmo corpo docente, laboratórios e acesso ao PPGCC.
+  Um estudante argumenta que, diante disso, manter dois cursos separados é
+  \ntc{redundante e ineficiente}. Avalie criticamente esse argumento, considerando
+  tanto os pontos que o \impt{sustentam} quanto os que o \impt{contradizem}.
+
+\end{enumerate}
+
+\answerlines{75}
+
+\end{document}
