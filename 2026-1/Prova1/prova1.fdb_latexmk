@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1776956512.40737 "c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Prova1/prova1.tex" "prova1.pdf" "prova1" 1776956514.60351 0
-  "c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Prova1/prova1.tex" 1776956511 2240 b3f3939c2a1bb228d249a13e2d1f353c ""
+["pdflatex"] 1777044267.01918 "c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Prova1/prova1.tex" "prova1.pdf" "prova1" 1777044270.82441 0
+  "c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Prova1/prova1.tex" 1777044261 2390 4d4e3d5713e83aa331c39533295e9a12 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1730312644 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1730314164 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1730313526 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -127,9 +127,9 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1730319856 5521136 47e49b84c41d5ab3414c7e2d0ef6eb2b ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1730320026 3325936 6e896a909b476ed009efbfbadbcd5207 ""
   "c:/texlive/2024/texmf.cnf" 1730319826 713 e69b156964470283e0530f5060668171 ""
-  "prova1.aux" 1776956514 334 c6b83a8fb385aa434daccd65f0d860cd "pdflatex"
-  "prova1.out" 1776956514 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "prova1.tex" 1776956511 2240 b3f3939c2a1bb228d249a13e2d1f353c ""
+  "prova1.aux" 1777044270 334 c6b83a8fb385aa434daccd65f0d860cd "pdflatex"
+  "prova1.out" 1777044269 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "prova1.tex" 1777044261 2390 4d4e3d5713e83aa331c39533295e9a12 ""
   (generated)
   "prova1.aux"
   "prova1.log"
