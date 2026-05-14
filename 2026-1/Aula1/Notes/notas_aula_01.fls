@@ -1,8 +1,8 @@
-PWD c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/LectureNotes/Aula1
+PWD c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Aula1/Notes
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/LectureNotes/Aula1/notas_aula_01.tex
+INPUT c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Aula1/Notes/notas_aula_01.tex
 OUTPUT notas_aula_01.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/extsizes/extarticle.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/extsizes/extarticle.cls

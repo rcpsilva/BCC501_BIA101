@@ -1,0 +1,8 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Onde estamos na estrutura da UFOP}{3}{0}{1}
+\beamer@sectionintoc {2}{Departamento}{6}{0}{2}
+\beamer@sectionintoc {3}{Colegiado de Curso}{13}{0}{3}
+\beamer@sectionintoc {4}{Departamento {\itshape vs.} Colegiado}{19}{0}{4}
+\beamer@sectionintoc {5}{Requerimentos do aluno}{21}{0}{5}
+\beamer@sectionintoc {6}{Casos concretos}{28}{0}{6}
+\beamer@sectionintoc {7}{Por que isso importa}{31}{0}{7}

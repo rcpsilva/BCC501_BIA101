@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  8 APR 2026 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  14 MAY 2026 10:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/LectureNotes/Aula1/notas_aula_01.tex
-(c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/LectureNotes/Aula1/notas_aula_01.tex
+**c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Aula1/Notes/notas_aula_01.tex
+(c:/Users/rcpsi/OneDrive/Documents/GitHub/BCC501_BIA101/2026-1/Aula1/Notes/notas_aula_01.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
 (c:/texlive/2024/texmf-dist/tex/latex/extsizes/extarticle.cls
@@ -783,14 +783,14 @@ Package rerunfilecheck Info: File `notas_aula_01.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  24643 strings out of 473577
- 456533 string characters out of 5732224
+ 456512 string characters out of 5732224
  874213 words of memory out of 5000000
  47052 multiletter control sequences out of 15000+600000
  577482 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,8n,107p,631b,728s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,8n,107p,624b,728s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi0900.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on notas_aula_01.pdf (6 pages, 320068 bytes).
+Output written on notas_aula_01.pdf (6 pages, 319812 bytes).
 PDF statistics:
  284 PDF objects out of 1000 (max. 8388607)
  243 compressed objects within 3 object streams

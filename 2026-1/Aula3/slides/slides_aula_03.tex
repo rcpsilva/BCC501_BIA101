@@ -1,0 +1,685 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[expansion=false,protrusion=false]{microtype}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Colors — paleta padrão (azul escuro + laranja)
+\definecolor{mblack}{RGB}{20, 20, 20}
+\definecolor{mprimary}{RGB}{8,139,188}     % azul escuro
+\definecolor{maccent}{RGB}{97,159,32}     % laranja
+\definecolor{mwhite}{RGB}{255, 255, 255}
+
+% Theme
+\usetheme{default}
+\usecolortheme{default}
+\setbeamercolor{normal text}{fg=mblack, bg=white}
+\setbeamercolor{frametitle}{fg=white, bg=mprimary}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{itemize item}{fg=maccent}
+\setbeamercolor{itemize subitem}{fg=mprimary}
+\setbeamercolor{enumerate item}{fg=maccent}
+\setbeamercolor{enumerate subitem}{fg=mprimary}
+\setbeamercolor{block title}{fg=white, bg=mprimary}
+\setbeamercolor{block body}{fg=mblack, bg=mprimary!8}
+\setbeamercolor{block title alerted}{fg=white, bg=maccent}
+\setbeamercolor{block body alerted}{fg=mblack, bg=maccent!10}
+\setbeamercolor{alerted text}{fg=maccent}
+
+\setbeamerfont{frametitle}{series=\bfseries, size=\large}
+\setbeamerfont{title}{series=\bfseries, size=\LARGE}
+\setbeamerfont{block title}{series=\bfseries}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Footer
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.7\paperwidth, ht=2.25ex, dp=1ex, leftskip=0.3cm]{normal text}%
+      \tiny\color{mblack!50} Introdução ao Curso -- DECOM/UFOP
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.3\paperwidth, ht=2.25ex, dp=1ex, rightskip=0.3cm, right]{normal text}%
+      \tiny\color{mblack!50}\insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+% Frametitle with accent rule
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0.2cm, leftskip=0.5cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+  \vspace{-0.1cm}%
+  \textcolor{maccent}{\rule{\paperwidth}{2pt}}%
+}
+
+% Title page: three-band layout
+\setbeamercolor{titlebar top}{bg=mwhite}
+\setbeamercolor{titlebar main}{bg=mprimary}
+\setbeamercolor{titlebar bottom}{bg=maccent}
+
+\setbeamertemplate{title page}{%
+  \vspace{0pt}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0pt]{titlebar top}\end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=3.8cm, dp=0pt, center]{titlebar main}%
+    \vspace{0.6cm}
+    {\usebeamerfont{title}\color{white}\inserttitle\par}%
+    \vspace{0.35cm}{\color{white}\small\insertauthor\par}%
+    \vspace{0.15cm}{\color{white}\footnotesize\insertdate\par}%
+    \vspace{0.25cm}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=1.3cm, dp=0pt]{titlebar bottom}\end{beamercolorbox}%
+}
+
+\setlength{\itemsep}{4pt}
+
+% Highlight commands
+\newcommand{\impt}[1]{\textcolor{maccent}{\textbf{#1}}}
+\newcommand{\ntc}[1]{\textcolor{mprimary}{#1}}
+
+\title{Estrutura Acadêmica da UFOP}
+\author{Departamento e Colegiado de Curso}
+\date{\today}
+
+\begin{document}
+
+% ============================================================
+\begin{frame}[plain]\titlepage\end{frame}
+
+% ============================================================
+\begin{frame}{Sumário}
+  \tableofcontents
+\end{frame}
+
+% ============================================================
+\section{Onde estamos na estrutura da UFOP}
+
+\begin{frame}{A UFOP em dois grandes blocos}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Administração Central}
+        \begin{itemize}
+          \item Reitoria
+          \item Conselho Universitário
+          \item Conselho Curador
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Unidades Acadêmicas}
+        \begin{itemize}
+          \item ICEB, EM, IFAC, \ldots
+          \item DECOM $\subset$ ICEB
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.4cm}
+   
+  \ntc{É dentro das Unidades Acadêmicas que vivem os dois órgãos desta aula.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Composição de uma Unidade Acadêmica}
+  \begin{itemize}
+    \item Conselho da Unidade
+    \item Diretoria e vice-diretoria
+    \item Cursos de graduação e pós-graduação
+    \item \impt{Colegiados de curso}
+    \item \impt{Departamentos} (ou equivalentes)
+    \item Núcleos e órgãos complementares
+  \end{itemize}
+
+  \vspace{0.4cm}
+   
+  \begin{alertblock}{A distinção essencial}
+    \textbf{Departamento:} onde o \emph{professor} trabalha.\\
+    \textbf{Colegiado:} quem cuida da formação do \emph{aluno} de um curso.
+  \end{alertblock}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Exemplo concreto}
+  Um docente do \impt{DECOM} pode ministrar disciplinas para:
+  \begin{itemize}
+    \item BCC, BIA
+    \item Engenharias
+    \item Estatística
+    \item Matemática
+    \item Química
+  \end{itemize}
+
+  \vspace{0.3cm}
+   
+  \ntc{Lotação:} um único departamento (DECOM).\\
+  \ntc{Representação:} potencialmente em vários colegiados.
+\end{frame}
+
+% ============================================================
+\section{Departamento}
+
+\begin{frame}{Departamento --- definição}
+  \begin{block}{Estatuto da UFOP}
+    Órgão de \impt{lotação de professores} (e de parte dos técnicos-administrativos), voltado para objetivos comuns de \impt{ensino, pesquisa e extensão} em uma área do conhecimento.
+  \end{block}
+
+  \vspace{0.4cm}
+
+  Toda Unidade Acadêmica é composta por departamentos --- e todo departamento está vinculado a uma Unidade.
+\end{frame}
+
+% ============================================================
+\begin{frame}{Por que um departamento existe?}
+  Três justificativas:
+  \begin{enumerate}
+    \item Áreas do conhecimento que abrange
+    \item Linhas de pesquisa e projetos pedagógicos sustentados
+    \item Recursos materiais e humanos necessários
+  \end{enumerate}
+
+  \vspace{0.4cm}
+
+  \begin{block}{O DECOM, em particular}
+    Algoritmos, IA, sistemas, teoria da computação\ldots\\
+    + pesquisa associada + pessoal lotado.
+  \end{block}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Quem compõe a Assembleia do Departamento}
+  \begin{itemize}
+    \item \impt{Todos os docentes} lotados no departamento
+    \item Representante(s) dos \impt{técnicos-administrativos}
+    \item Representante(s) do \impt{corpo discente} dos cursos atendidos
+  \end{itemize}
+
+  \vspace{0.4cm}
+
+  \ntc{Discentes e técnicos têm representação paritária entre si.}\\
+  \ntc{Deliberações: maioria dos presentes.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Chefia e funcionamento}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Chefia}
+        \begin{itemize}
+          \item Chefe e vice-chefe
+          \item Mandato de \impt{2 anos}
+          \item Permitida uma recondução
+          \item Chefe preside a assembleia
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Reuniões}
+        \begin{itemize}
+          \item Mínimo \impt{2 por semestre}
+          \item Câmara: possível com \impt{>20 docentes}
+          \item Com câmara: $\geq$ 1 assembleia plena/semestre
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ============================================================
+\begin{frame}{O que o departamento decide --- parte 1}
+  \begin{enumerate}
+    \item Planejar ensino, pesquisa e extensão
+    \item Elaborar planos de trabalho e \impt{capacitação} dos docentes
+    \item Atribuir \impt{encargos de ensino} \\
+          \ntc{(quem dá qual disciplina em cada semestre)}
+    \item Propor aos colegiados as \impt{ementas, programas e bibliografias} das suas disciplinas
+  \end{enumerate}
+\end{frame}
+
+% ============================================================
+\begin{frame}{O que o departamento decide --- parte 2}
+  \begin{enumerate}
+    \setcounter{enumi}{4}
+    \item Propor \impt{contratação, substituição, afastamento e dispensa} de docentes
+    \item Eleger \impt{representantes nos colegiados de curso}
+    \item Elaborar o \impt{relatório anual} de atividades
+    \item Propor (com 2/3) afastamento ou destituição do chefe
+  \end{enumerate}
+
+  \vspace{0.4cm}
+  \begin{alertblock}{Resumo}
+    Departamento responde por \impt{oferta} (quem ensina, o que ensina, com qual conteúdo) e \impt{corpo docente}.
+  \end{alertblock}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Atenção: ementa é \emph{proposta}, não \emph{aprovada}}
+  \begin{block}{Direção da proposta}
+    O DECOM \impt{propõe} a ementa de BCC501.\\
+    O colegiado do BCC (e demais que usam a disciplina) \impt{aprova}.
+  \end{block}
+
+  \vspace{0.4cm}
+   
+  \ntc{Departamento define o conteúdo técnico; colegiado avalia no contexto do projeto pedagógico do curso.}
+\end{frame}
+
+% ============================================================
+\section{Colegiado de Curso}
+
+\begin{frame}{Colegiado --- definição}
+  \begin{block}{Função}
+    Órgão responsável pela \impt{coordenação didática} dos componentes curriculares do \impt{projeto pedagógico} de um curso.
+  \end{block}
+
+  \vspace{0.4cm}
+   
+  Cada curso de graduação e cada programa de pós tem \impt{o seu próprio colegiado}.
+
+  \vspace{0.3cm}
+   
+  \ntc{Mudança de foco: o departamento se organiza por área; o colegiado, por curso.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Quem compõe o colegiado}
+  \begin{itemize}
+    \item \impt{Representantes docentes} dos departamentos que oferecem disciplinas do curso
+    \item \impt{Representação estudantil} (mandato de 1 ano, uma recondução)
+  \end{itemize}
+
+  \vspace{0.4cm}
+   
+  \begin{block}{Regra de proporcionalidade}
+    1 representante a cada \impt{180h} ofertadas pelo departamento.\\
+    Máximo de \impt{5 membros} por departamento.
+  \end{block}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Coordenação e NDE}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Coordenação}
+        \begin{itemize}
+          \item Coordenador e vice (docentes)
+          \item Mandato de \impt{2 anos}
+          \item Uma recondução
+          \item Coordenador preside o colegiado
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{NDE}
+        \begin{itemize}
+          \item \impt{Núcleo Docente Estruturante}
+          \item Pensa e atualiza o projeto pedagógico
+          \item Indicado pelo colegiado
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+   
+  \ntc{Reuniões: mínimo 2 por semestre, com relatórios de integralização curricular.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{O que o colegiado decide --- currículo}
+  \begin{enumerate}
+    \item Compatibilizar diretrizes dos componentes curriculares
+    \item Regulamentar componentes para execução do PPC
+    \item \impt{Deliberar sobre ementas e programas} propostos pelos departamentos
+    \item Propor ao Conselho Superior o \impt{projeto pedagógico} e suas alterações
+  \end{enumerate}
+
+  \vspace{0.4cm}
+   
+  \ntc{Departamento propõe; colegiado aprova (ou pede ajuste) à luz do PPC.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{O que o colegiado decide --- trajetória do aluno}
+  Questões \impt{individuais} do percurso acadêmico:
+  \begin{itemize}
+    \item Reopção de curso
+    \item \impt{Equivalência de disciplinas}
+    \item Desligamento e jubilamento
+    \item \impt{Aproveitamento de estudos}
+    \item Portador de Diploma (PDG)
+    \item Transferência e reingresso
+    \item Mobilidade acadêmica
+  \end{itemize}
+
+  \vspace{0.3cm}
+   
+  \begin{alertblock}{Heurística}
+    ``Minha matéria $X$ feita na situação $Y$ vale para o meu curso?''\\
+    $\Rightarrow$ \impt{Colegiado.} Não o departamento que oferece a disciplina.
+  \end{alertblock}
+\end{frame}
+
+% ============================================================
+\begin{frame}{O que o colegiado decide --- conclusão}
+  \begin{itemize}
+    \item \impt{Coordenar a orientação acadêmica} (integralização curricular)
+    \item \impt{Indicar à PROGRAD os candidatos à colação de grau}\\
+          \ntc{``Este aluno cumpriu tudo o que o PPC exige.''}
+    \item Indicar membros do NDE
+    \item Recomendar ao departamento: \impt{abertura de vagas e de turmas}
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+\section{Departamento {\itshape vs.} Colegiado}
+
+\begin{frame}{Comparação --- parte 1}
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{}p{3.2cm} p{4.6cm} p{4.6cm}@{}}
+    \toprule
+    \textbf{Dimensão} & \textbf{Departamento} & \textbf{Colegiado} \\
+    \midrule
+    Organiza-se por & área de conhecimento & curso específico \\
+    Lotação de & docentes e técnicos & ninguém é \emph{lotado} \\
+    Atribui & encargos didáticos & componentes ao PPC \\
+    Propõe & ementas e programas & projeto pedagógico \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Comparação --- parte 2}
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{}p{3.2cm} p{4.6cm} p{4.6cm}@{}}
+    \toprule
+    \textbf{Dimensão} & \textbf{Departamento} & \textbf{Colegiado} \\
+    \midrule
+    Aprova & planos de trabalho docentes & equivalências, aproveitamentos \\
+    Decide sobre & contratação e encargo & desligamento e jubilamento do aluno \\
+    Presidência & chefe (2 anos) & coordenador (2 anos) \\
+    Discentes & representação na assembleia & representação no colegiado \\
+    Reuniões/sem. & $\geq$ 2 & $\geq$ 2 \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+% ============================================================
+\section{Requerimentos do aluno}
+
+\begin{frame}{Requerimentos ao departamento}
+  Apenas \impt{dois tipos} --- ambos sobre oferta de disciplinas:
+  \begin{enumerate}
+    \item \impt{Abertura de turma}
+    \item \impt{Abertura de vaga} em disciplina
+  \end{enumerate}
+
+  \vspace{0.4cm}
+   
+  \begin{block}{Lógica}
+    Departamento é quem oferece a disciplina.\\
+    \ntc{Disponibilizar disciplina = pedido ao departamento.}
+  \end{block}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Requerimentos ao colegiado --- matrícula excepcional}
+  \begin{enumerate}
+    \item Quebra de pré-requisito
+    \item Quebra de período consecutivo
+    \item Matrícula com excesso de horas
+    \item Excesso de horas em disciplina facultativa
+  \end{enumerate}
+
+  \vspace{0.4cm}
+   
+  \begin{alertblock}{Atenção}
+    Nesses quatro casos, \impt{não é permitido trancamento parcial} da disciplina cuja matrícula foi feita por requerimento.
+  \end{alertblock}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Requerimentos ao colegiado --- validação de estudos}
+  \begin{itemize}
+    \item \impt{Aproveitamento de estudos} \\
+          \ntc{(Res. CEPE 7.325 --- histórico + programa analítico)}
+    \item \impt{Extraordinário aproveitamento} \\
+          \ntc{(Res. CEPE 1.986 --- CRE $\geq 7{,}0$, top 12\%)}
+    \item \impt{Exame de nivelamento em língua estrangeira} \\
+          \ntc{(Res. CEPE 4.672)}
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Requerimentos ao colegiado --- vínculo e trajetória}
+  \begin{itemize}
+    \item Reopção de curso / reopção de habilitação
+    \item Reingresso
+    \item Transferência (outra IES)
+    \item Portador de Diploma de Graduação (PDG)
+    \item Mobilidade acadêmica (ANDIFES, internacional)
+  \end{itemize}
+
+  \vspace{0.3cm}
+   
+  \ntc{Em vários casos há processo seletivo da PROGRAD para vagas residuais --- mas a decisão acadêmica final é do \impt{colegiado de destino}.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Requerimentos ao colegiado --- suspensão e conclusão}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Suspensão}
+        \begin{itemize}
+          \item Afastamento especial (até 4 anos, \impt{uma vez})
+          \item Trancamento fora de prazo
+          \item Licença maternidade/paternidade
+          \item RETEF
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Atividades e conclusão}
+        \begin{itemize}
+          \item AACC
+          \item 2ª chamada (falecimento, 7 dias)
+          \item Colação de grau
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Nem tudo vai a departamento ou colegiado}
+  Outros destinos comuns:
+  \begin{itemize}
+    \item \impt{Seção de Ensino / minhaUFOP}: matrícula, cadastro, documentos
+    \item \impt{PROGRAD}: cancelamento institucional, auxílio a eventos
+    \item \impt{SISBIN}: carteira estudantil
+    \item \impt{PRACE / PROPP / PROEx}: bolsas (alimentação, moradia, IC, extensão)
+    \item \impt{Conselho da Unidade}: recursos contra decisões de departamento ou colegiado
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Heurística prática}
+  \begin{block}{Para o aluno decidir a quem recorrer}
+    \begin{itemize}
+      \item \impt{Disponibilizar disciplina} (oferta) $\Rightarrow$ Departamento
+      \item \impt{Qualquer outra coisa acadêmica} (regra de matrícula, validação, mudança de vínculo, suspensão, conclusão) $\Rightarrow$ Colegiado
+      \item \impt{Administrativo} (documento, cadastro) $\Rightarrow$ Seção de Ensino
+      \item \impt{Financeiro/assistencial} (bolsa, auxílio) $\Rightarrow$ Pró-reitoria competente
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+% ============================================================
+\section{Casos concretos}
+
+\begin{frame}{Casos 1 e 2}
+  \begin{alertblock}{Caso 1}
+    Aluno cursou Cálculo I em outra universidade e quer aproveitá-la no BCC.
+  \end{alertblock}
+   
+  $\Rightarrow$ \impt{Colegiado do BCC} (aproveitamento de estudos).
+
+  \vspace{0.5cm}
+   
+  \begin{alertblock}{Caso 2}
+    Alunos acham a ementa de PCC104 desatualizada e querem propor reforma.
+  \end{alertblock}
+   
+  $\Rightarrow$ \impt{Colegiado primeiro}, que dialoga com o \impt{DECOM}.\\
+  \ntc{Ementa: proposta pelo departamento, aprovada pelo colegiado.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Casos 3 e 4}
+  \begin{alertblock}{Caso 3}
+    Aluno do BCC quer mudar para Engenharia de Computação (reopção).
+  \end{alertblock}
+   
+  $\Rightarrow$ \impt{Colegiados do BCC e da Engenharia de Computação}.
+
+  \vspace{0.5cm}
+   
+  \begin{alertblock}{Caso 4}
+    Docente do DECOM quer afastar-se por um ano para pós-doutorado.
+  \end{alertblock}
+   
+  $\Rightarrow$ \impt{Departamento (Assembleia do DECOM)}.\\
+  \ntc{Plano de capacitação $\to$ Conselho da Unidade.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Casos 5, 6 e 7}
+  \begin{alertblock}{Caso 5}
+    DECOM precisa decidir quem ministra PCC104 no próximo semestre.
+  \end{alertblock}
+   
+  $\Rightarrow$ \impt{Departamento} (atribuição de encargos).
+
+  \vspace{0.3cm}
+   
+  \begin{alertblock}{Caso 6}
+    Aluno concluiu tudo e quer colar grau.
+  \end{alertblock}
+   
+  $\Rightarrow$ \impt{Colegiado do curso} (indica à PROGRAD).
+
+  \vspace{0.3cm}
+   
+  \begin{alertblock}{Caso 7}
+    Aluno quer questionar decisão do coordenador de curso.
+  \end{alertblock}
+   
+  $\Rightarrow$ \impt{Conselho da Unidade Acadêmica} (instância superior).
+\end{frame}
+
+% ============================================================
+\section{Por que isso importa}
+
+\begin{frame}{Duas portas de entrada}
+  \begin{block}{Separação estrutural}
+    Quem \impt{oferece a disciplina} $\neq$ quem \impt{coordena o curso}.
+  \end{block}
+
+  \vspace{0.4cm}
+   
+  \begin{itemize}
+    \item Docente especializado é gerido junto com seus pares de área
+    \item Projeto formativo de cada curso é pensado a partir da perspectiva específica do curso
+    \item Várias contribuições departamentais convergem em um único PPC
+  \end{itemize}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Representação discente: canais complementares}
+  O corpo discente tem representação \impt{nas duas instâncias}:
+
+  \vspace{0.3cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Assembleia de departamento}
+        Decisões sobre:
+        \begin{itemize}
+          \item Oferta de disciplinas
+          \item Corpo docente
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Colegiado de curso}
+        Decisões sobre:
+        \begin{itemize}
+          \item Currículo
+          \item Trajetória dos alunos
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+   
+  \ntc{Atuação estratégica: saber em qual instância levantar cada questão.}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Como resolver problemas na UFOP}
+  Ordem prática de consulta:
+  \begin{enumerate}
+    \item \impt{Colega de turma} --- mesma situação que você
+    \item \impt{Veterano} --- já enfrentou algo parecido
+    \item \impt{Página de orientações da PROGRAD} \\
+          \ntc{\small\url{https://www.prograd.ufop.br/orientacoes-gerais-alunos-e-professores}}
+    \item \impt{Colegiado do curso}
+          \begin{itemize}
+            \item CC: \ntc{\texttt{cocic@ufop.edu.br}}
+            \item BIA: \ntc{\texttt{cobia@ufop.edu.br}}
+          \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Mensagem final}
+  \begin{block}{Para levar para casa}
+    \begin{itemize}
+      \item \impt{Departamento}: onde o professor é lotado --- responde por oferta e corpo docente.
+      \item \impt{Colegiado}: onde o curso é coordenado --- responde por trajetória, currículo e validação de percurso.
+      \item \impt{Conselho da Unidade}: instância de recurso.
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \large \impt{Saber a quem recorrer é parte da formação universitária.}
+  \end{center}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Fontes}
+  \footnotesize
+  \begin{itemize}
+    \item Estatuto da UFOP --- Resolução CUNI nº 1.868, de 17/02/2017 (e alterações).
+    \item Regimento Geral da UFOP --- Resolução CUNI nº 1.959, de 28/11/2017 (e alterações).
+    \item PROGRAD --- Orientações Gerais a Alunos e Professores. \\
+          \ntc{\url{https://www.prograd.ufop.br/orientacoes-gerais-alunos-e-professores}}
+    \item Resoluções CEPE: 1.744, 1.986, 2.871, 4.672, 5.709, 7.325.
+    \item Resolução CONGRAD 250/2025.
+  \end{itemize}
+\end{frame}
+
+\end{document}
