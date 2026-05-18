@@ -1,0 +1,297 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{csquotes}
+\usepackage{tikz}
+
+% Colors -- paleta PCC104 (azul escuro + laranja)
+\definecolor{mblack}{RGB}{20, 20, 20}
+\definecolor{mprimary}{RGB}{30, 45, 47}     % azul escuro
+\definecolor{maccent}{RGB}{197, 123, 87}    % laranja
+\definecolor{mwhite}{RGB}{255, 255, 255}
+
+% Theme
+\usetheme{default}
+\usecolortheme{default}
+\setbeamercolor{normal text}{fg=mblack, bg=white}
+\setbeamercolor{frametitle}{fg=white, bg=mprimary}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{itemize item}{fg=maccent}
+\setbeamercolor{itemize subitem}{fg=mprimary}
+\setbeamercolor{enumerate item}{fg=maccent}
+\setbeamercolor{enumerate subitem}{fg=mprimary}
+\setbeamercolor{block title}{fg=white, bg=mprimary}
+\setbeamercolor{block body}{fg=mblack, bg=mprimary!8}
+\setbeamercolor{alerted text}{fg=maccent}
+\setbeamercolor{block title alerted}{fg=white, bg=maccent}
+\setbeamercolor{block body alerted}{fg=mblack, bg=maccent!10}
+
+\setbeamerfont{frametitle}{series=\bfseries, size=\large}
+\setbeamerfont{title}{series=\bfseries, size=\LARGE}
+\setbeamerfont{block title}{series=\bfseries}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Footer
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.7\paperwidth, ht=2.25ex, dp=1ex, leftskip=0.3cm]{normal text}%
+      \tiny\color{mblack!50} DECOM/UFOP -- Boas-vindas: comportamento e \'etica
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.3\paperwidth, ht=2.25ex, dp=1ex, rightskip=0.3cm, right]{normal text}%
+      \tiny\color{mblack!50}\insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+% Frametitle with accent rule
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0.2cm, leftskip=0.5cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+  \vspace{-0.1cm}%
+  \textcolor{maccent}{\rule{\paperwidth}{2pt}}%
+}
+
+% Title page: three-band layout
+\setbeamercolor{titlebar top}{bg=mwhite}
+\setbeamercolor{titlebar main}{bg=mprimary}
+\setbeamercolor{titlebar bottom}{bg=maccent}
+
+\setbeamertemplate{title page}{%
+  \vspace{0pt}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0pt]{titlebar top}\end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=3.8cm, dp=0pt, center]{titlebar main}%
+    \vspace{0.6cm}
+    {\usebeamerfont{title}\color{white}\inserttitle\par}%
+    \vspace{0.35cm}{\color{white}\small\insertauthor\par}%
+    \vspace{0.15cm}{\color{white}\footnotesize\insertdate\par}%
+    \vspace{0.25cm}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=1.3cm, dp=0pt]{titlebar bottom}\end{beamercolorbox}%
+}
+
+\setlength{\itemsep}{4pt}
+
+\newcommand{\impt}[1]{\textcolor{maccent}{\textbf{#1}}}
+\newcommand{\ntc}[1]{\textcolor{mprimary}{#1}}
+
+\title{Bem-vindos \`a Universidade}
+\author{Comportamento acad\^emico \& responsabilidade \'etica em Computa\c{c}\~ao e IA}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]\titlepage\end{frame}
+
+\begin{frame}{Sum\'ario}
+\tableofcontents
+\end{frame}
+
+% ==========================================================
+\section{Parte I -- Comportamento na universidade}
+% ==========================================================
+
+\begin{frame}{Voc\^es n\~ao est\~ao mais no ensino m\'edio}
+\begin{itemize}
+  \item A universidade exige \impt{autonomia}: ningu\'em vai cobrar voc\^es individualmente
+  \pause
+  \item O professor \ntc{orienta}; quem estuda \'e voc\^e
+  \pause
+  \item Mais liberdade $\Rightarrow$ \impt{mais responsabilidade}
+  \pause
+  \item Resultado depende muito mais do que voc\^e faz \emph{fora} da sala
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Frequ\^encia e presen\c{c}a}
+\begin{itemize}
+  \item V\'a \`as aulas -- mesmo as ``chatas''
+  \pause
+  \item \impt{Chegue no hor\'ario}. Atraso atrapalha quem chegou na hora
+  \pause
+  \item Celular no silencioso, longe da m\~ao
+  \pause
+  \item Em aula: pergunte. D\'uvida n\~ao perguntada vira nota baixa depois
+\end{itemize}
+\end{frame}
+
+\begin{frame}{H\'abitos de estudo}
+\begin{block}{Regra pr\'atica}
+Para cada hora de aula, planeje \impt{2 horas} de estudo fora dela.
+\end{block}
+\pause
+\begin{itemize}
+  \item Estude \ntc{antes} da aula seguinte, n\~ao na v\'espera da prova
+  \pause
+  \item Resolva exerc\'icios -- ler n\~ao \'e estudar
+  \pause
+  \item Forme grupos de estudo, mas \impt{produza primeiro sozinho}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Comunica\c{c}\~ao com professores}
+\begin{itemize}
+  \item E-mail com \impt{assunto claro} e identifica\c{c}\~ao (nome, matr\'icula, disciplina)
+  \pause
+  \item Releia antes de enviar. Texto sem pontua\c{c}\~ao n\~ao \'e informalidade -- \'e desleixo
+  \pause
+  \item \ntc{N\~ao pe\c{c}a} o que est\'a no plano de ensino
+  \pause
+  \item Hor\'ario de atendimento existe -- use
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Convivência e respeito}
+\begin{itemize}
+  \item A universidade \'e \impt{plural}: origens, cren\c{c}as, identidades diferentes
+  \pause
+  \item Disc\'ordia intelectual: bem-vinda. Desrespeito: n\~ao
+  \pause
+  \item Trote, ass\'edio, discrimina\c{c}\~ao: \impt{denuncie}
+  \pause
+  \item Sa\'ude mental importa -- procure o servi\c{c}o de apoio da UFOP quando precisar
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Integridade acad\^emica}
+\begin{alertblock}{O que conta como fraude}
+C\'opia, plágio, ``fazer o trabalho do colega'', \impt{usar IA generativa como se fosse seu}, comprar TCC.
+\end{alertblock}
+\pause
+\begin{itemize}
+  \item Plágio destr\'oi reputa\c{c}\~ao -- e a sua reputa\c{c}\~ao come\c{c}a agora
+  \pause
+  \item \ntc{Cite suas fontes}. Inclusive ferramentas de IA, quando autorizadas
+  \pause
+  \item Em caso de d\'uvida: pergunte ao professor antes de entregar
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Uso de IA durante o curso}
+\begin{itemize}
+  \item IA pode ser \impt{aliada} de aprendizagem -- ou atalho para n\~ao aprender
+  \pause
+  \item Cada disciplina define o que \'e permitido. \ntc{Pergunte}
+  \pause
+  \item Se voc\^e n\~ao consegue explicar o c\'odigo/texto, \impt{n\~ao \'e seu}
+  \pause
+  \item Lembrete: a prova \'e sem IA. Quem n\~ao aprendeu vai aparecer
+\end{itemize}
+\end{frame}
+
+% ==========================================================
+\section{Parte II -- \'Etica, sociedade e ambiente}
+% ==========================================================
+
+\begin{frame}{Por que isso importa para voc\^es}
+\begin{itemize}
+  \item Computa\c{c}\~ao e IA \impt{n\~ao s\~ao neutras}
+  \pause
+  \item O c\'odigo que voc\^es v\~ao escrever \ntc{decide} sobre vidas: cr\'edito, sa\'ude, emprego, justi\c{c}a
+  \pause
+  \item Engenheiro civil aprende sobre seguran\c{c}a estrutural. Voc\^es precisam aprender sobre \impt{seguran\c{c}a social}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Vi\'es e justi\c{c}a algor\'itmica}
+\begin{itemize}
+  \item Dados refletem desigualdades do mundo real
+  \pause
+  \item Modelo treinado em dados enviesados \impt{automatiza} a desigualdade
+  \pause
+  \item Exemplos: reconhecimento facial com m\'a performance em peles negras; sistemas de cr\'edito; tria-gem de curr\'iculos
+  \pause
+  \item \ntc{Quem n\~ao est\'a nos dados} tamb\'em \'e uma decis\~ao
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Privacidade e dados pessoais}
+\begin{itemize}
+  \item LGPD existe -- e \impt{se aplica} ao c\'odigo de voc\^es
+  \pause
+  \item Coletar \emph{menos} dados costuma ser melhor que coletar mais
+  \pause
+  \item Anonimiza\c{c}\~ao \ntc{n\~ao} \'e garantia: dados podem ser reidentificados
+  \pause
+  \item ``Eu n\~ao tenho nada a esconder'' \'e uma m\'a defesa de uma m\'a pol\'itica
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Trabalho, automa\c{c}\~ao e desigualdade}
+\begin{itemize}
+  \item IA est\'a transformando profiss\~oes -- inclusive a de voc\^es
+  \pause
+  \item Quem ganha e quem perde com a automa\c{c}\~ao? \impt{N\~ao \'e dado da natureza}: \'e escolha
+  \pause
+  \item Concentra\c{c}\~ao de poder em poucas empresas de tecnologia
+  \pause
+  \item \ntc{Voc\^es t\^em voz} sobre o que constroem e para quem
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Desinforma\c{c}\~ao e manipula\c{c}\~ao}
+\begin{itemize}
+  \item Modelos generativos: texto, imagem, voz, v\'ideo (\impt{deepfakes})
+  \pause
+  \item Custo de produzir mentira convincente caiu drasticamente
+  \pause
+  \item Impacto em elei\c{c}\~oes, rela\c{c}\~oes pessoais, golpes financeiros
+  \pause
+  \item Quem desenvolve essas ferramentas \ntc{compartilha} a responsabilidade pelo uso
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Custo ambiental da computa\c{c}\~ao}
+\begin{itemize}
+  \item Treinar e operar modelos grandes consome \impt{muita} energia e \'agua
+  \pause
+  \item Data centers $\Rightarrow$ emiss\~oes de CO$_2$ e estresse h\'idrico local
+  \pause
+  \item Hardware: mineração, lixo eletr\^onico, obsolesc\^encia programada
+  \pause
+  \item \ntc{Efici\^encia} (de modelo e de c\'odigo) \'e quest\~ao ambiental, n\~ao s\'o t\'ecnica
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Seguran\c{c}a e usos maliciosos}
+\begin{itemize}
+  \item Mesmo c\'odigo bem-intencionado pode ser \impt{reaproveitado} para o mal
+  \pause
+  \item Vulnerabilidades em sa\'ude, infraestrutura cr\'itica, sistemas financeiros
+  \pause
+  \item IA aplicada a vigil\^ancia em massa, armas aut\^onomas
+  \pause
+  \item Pergunta b\'asica: \ntc{quem se machuca} se isso for usado errado?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{O profissional que voc\^es ser\~ao}
+\begin{block}{Tr\^es perguntas antes de codar}
+\begin{enumerate}
+  \item \impt{Para quem} isso serve? Quem est\'a de fora?
+  \item Como isso pode ser usado \impt{para causar dano}?
+  \item Eu conseguiria \impt{justificar} essa decis\~ao publicamente?
+\end{enumerate}
+\end{block}
+\pause
+\vspace{0.3cm}
+\ntc{Recusar} um projeto antiético tamb\'em \'e parte da profiss\~ao.
+\end{frame}
+
+\begin{frame}{Mensagem final}
+\begin{itemize}
+  \item Voc\^es escolheram uma \'area com \impt{enorme poder} -- e portanto enorme responsabilidade
+  \pause
+  \item Bons profissionais s\~ao t\'ecnicamente competentes \ntc{e} eticamente atentos
+\end{itemize}
+\end{frame}
+
+\end{document}
